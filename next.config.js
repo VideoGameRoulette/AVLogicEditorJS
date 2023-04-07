@@ -1,7 +1,7 @@
 const nextConfig = {
   reactStrictMode: true,
-  // basePath: '/qsys-qrc-py',
-  // assetPrefix: '/qsys-qrc-py',
+  basePath: '/AVLogicEditorJS',
+  assetPrefix: '/AVLogicEditorJS',
 }
 
 module.exports = nextConfig;
