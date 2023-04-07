@@ -90,3 +90,28 @@
 	visibility: visible;
   }
   
+  /* Customize the track */
+::-webkit-scrollbar-track {
+  background-color: #1F2937;
+}
+
+/* Customize the thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #4B5563;
+  border-radius: 10px;
+}
+
+/* Customize the thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6B7280;
+}
+
+/* Customize the corner */
+::-webkit-scrollbar-corner {
+  background-color: #1F2937;
+}
+
+/* Hide the scrollbar when not in use */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

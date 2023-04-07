@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from 'components/Header';
 import { MainContainer, SecondaryContainer } from 'components/Containers';
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
+import { classNames } from 'utils';
 
 // Simulated Power Flags
 const Powers = {
@@ -45,27 +46,24 @@ const Powers = {
 export default function Home() {
   const [locations, setLocations] = useState(null);
   const [current, setCurrent] = useState(null);
-  const [pIndex, setPIndex] = useState(0);
+  const [pIndex, setPIndex] = useState(null);
   const [powers, setPowers] = useState(null);
 
   useEffect(() => {
-    if (locations === null) return;
-    console.log("Locations: ", locations);
-  }, [locations]);
-
-  useEffect(() => {
     if (current === null) return;
-    console.log("Current Location: ", current);
+    const newData2 = locations;
+
+    newData2.map((location, idx) => {
+      if (location.id === current.id)
+        newData2[idx] = current;
+    });
+    setLocations(newData2);
   }, [current]);
 
-  useEffect(() => {
-    if (powers === null) return;
-    console.log("Current Powers: ", powers);
-  }, [powers]);
-
   // Handle for saving json file
-  function downloadLogicFile(data, filename) {
-    const json = JSON.stringify(data);
+  function downloadLogicFile(data) {
+    const filename = "locations_custom.json";
+    const json = JSON.stringify(data, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const href = URL.createObjectURL(blob);
 
@@ -94,11 +92,6 @@ export default function Home() {
         // handle error
       }
     };
-  };
-
-  // Relay for File Input Button
-  const handleClickLoad = () => {
-    document.getElementById("fileInput").click();
   };
 
   // Create Power Objects for Checkboxes
@@ -143,6 +136,7 @@ export default function Home() {
   const handleItemClick = (location) => {
     setCurrent(location);
     setPowers(null);
+    setPIndex(null);
   }
 
   function getFlagStrings(flags) {
@@ -177,15 +171,8 @@ export default function Home() {
 
   const handlePowerAdd = () => {
     const { requiredPowers } = current;
-    var newData = [...requiredPowers, Powers.None];
+    const newData = [...requiredPowers, Powers.None];
     setCurrent(prev => ({ ...prev, requiredPowers: newData }));
-    var newData2 = locations;
-
-    newData2.map(location => {
-      if (location.id === current.id)
-        location = current;
-    });
-    setLocations(newData2);
   };
 
   const handlePowerRemove = (powers) => {
@@ -211,11 +198,8 @@ export default function Home() {
             <nav className="hidden xl:block bg-gray-900 text-white w-full h-full overflow-hidden flex flex-col p-2">
               {/* Load and Save Buttons */}
               <div className="w-full flex gap-2 mb-2 bg-gray-900">
-                <button className="w-full p-2 bg-gray-800 hover:bg-gray-700 text-center" onClick={handleClickLoad}>
+                <label htmlFor="fileInput" className="w-full p-2 bg-gray-800 hover:bg-gray-700 text-center">
                   Load
-                </button>
-                <label htmlFor="fileInput" className="w-full p-2 bg-gray-800 hover:bg-gray-700 text-center" onClick={() => downloadLogicFile(locations, "data.json")}>
-                  Save
                 </label>
                 <input
                   type="file"
@@ -224,15 +208,18 @@ export default function Home() {
                   onChange={handleFileUpload}
                   accept=".json"
                 />
+                <button className="w-full p-2 bg-gray-800 hover:bg-gray-700 text-center" onClick={() => downloadLogicFile(locations)}>
+                  Save
+                </button>
               </div>
               {/* Location List */}
-              <ul role="list" className="h-[55rem] flex flex-col gap-2 overflow-y-auto">
+              <ul role="list" className="h-[55rem] flex flex-col gap-2 overflow-y-auto scrollbar-hide">
                 {locations?.map((location) => (
-                  <li key={location.name} className="flex p-4 bg-gray-800 hover:bg-gray-700 cursor-pointer" onClick={() => handleItemClick(location)}>
+                  <li key={location.name} className={classNames(location.name === current?.name ? "bg-sky-500 text-black" : "bg-gray-800 hover:bg-gray-700 text-gray-200", "flex p-4 cursor-pointer")} onClick={() => handleItemClick(location)}>
                     <img className="h-10 w-10 rounded-full" src={`imgs/${getItemNameForImage(location.name)}.svg`} alt="" />
                     <div className="ml-3">
-                      <p className="text-sm font-medium text-gray-200">{location.name}</p>
-                      <p className="text-sm text-gray-300">{location.id}</p>
+                      <p className="text-sm font-medium">{location.name}</p>
+                      <p className="text-sm">{location.id}</p>
                     </div>
                   </li>
                 ))}
@@ -261,13 +248,13 @@ export default function Home() {
                 </div>
               </div>
               {/* Power Sets Lists fir Location and flag checkboxes*/}
-              <div className="w-full h-[50em] p-4 grid grid-cols-2 bg-gray-800">
+              <div className="w-full p-4 grid grid-cols-2 bg-gray-800">
                 <div className="col-span-1 bg-gray-900 py-2 pl-2 pr-1">
                   {/* Power Set Lists */}
                   <ul role="list" className='w-full h-full bg-gray-700'>
                     {current?.requiredPowers.map((powers, idx) => (
-                      <li key={`test${powers}`} className="flex p-4 odd:bg-gray-800 even:bg-gray-700 hover:bg-gray-600 cursor-pointer" onClick={() => handleClickPowers(powers, idx)}>
-                        <p className="text-sm font-medium text-gray-200">{getFlagStrings(powers)}</p>
+                      <li key={`test${powers}`} className={classNames(idx === pIndex ? "bg-sky-500 text-black" : "odd:bg-gray-800 even:bg-gray-700 hover:bg-gray-600 text-gray-200", "flex p-4 cursor-pointer")} onClick={() => handleClickPowers(powers, idx)}>
+                        <p className="text-sm font-medium">{getFlagStrings(powers)}</p>
                       </li>
                     ))}
                   </ul>
@@ -276,7 +263,7 @@ export default function Home() {
                 <div className="col-span-1 bg-gray-900 py-2 pr-2 pl-1">
                   <div className='w-full h-full bg-gray-700 p-4 text-gray-200'>
                     {powers?.map(({ power, value, checked }) => (
-                      <div key={`test${value}`}>
+                      <div key={`p${value}`}>
                         <label>
                           <input className="mr-2" type="checkbox" name={power} value={value} checked={checked} onClick={() => handlePowerClick(value)} />
                           {power}
