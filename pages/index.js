@@ -4,6 +4,7 @@ import Header from 'components/Header';
 import { MainContainer, SecondaryContainer } from 'components/Containers';
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
 
+// Simulated Power Flags
 const Powers = {
   None: 0,
   Gun: 1 << 0,
@@ -62,6 +63,7 @@ export default function Home() {
     console.log("Current Powers: ", powers);
   }, [powers]);
 
+  // Handle for saving json file
   function downloadLogicFile(data, filename) {
     const json = JSON.stringify(data);
     const blob = new Blob([json], { type: "application/json" });
@@ -73,6 +75,7 @@ export default function Home() {
     link.click();
   }
 
+  // Handle for File Input Button
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
 
@@ -93,10 +96,12 @@ export default function Home() {
     };
   };
 
+  // Relay for File Input Button
   const handleClickLoad = () => {
     document.getElementById("fileInput").click();
   };
 
+  // Create Power Objects for Checkboxes
   function createPowerObjects(p) {
     const powerObjects = [];
 
@@ -113,11 +118,13 @@ export default function Home() {
     return powerObjects;
   }
 
+  // Handles Power Checkbox Click
   const handleClickPowers = (p, idx) => {
     setPIndex(idx);
     setPowers(createPowerObjects(p));
   };
 
+  // Handles Location Click
   const handlePowerClick = (value) => {
     var newData = current.requiredPowers;
     var c = newData[pIndex];
@@ -132,6 +139,7 @@ export default function Home() {
     setPowers(newPowers);
   };
 
+  // Handles Location Click
   const handleItemClick = (location) => {
     setCurrent(location);
     setPowers(null);
@@ -149,7 +157,7 @@ export default function Home() {
     return flagStrings;
   }
 
-  function checkItem(mName) {
+  function getItemNameForImage(mName) {
     if (mName.includes("HealthNode")) {
       if (mName.endsWith("Fragment")) return "HealthNodeFragment";
       return "HealthNode";
@@ -199,7 +207,9 @@ export default function Home() {
         <MainContainer>
           <Header title="Axiom Verge Logic Editor" version="0.0.1" />
           <SecondaryContainer>
+            {/* Left Container */}
             <nav className="hidden xl:block bg-gray-900 text-white w-full h-full overflow-hidden flex flex-col p-2">
+              {/* Load and Save Buttons */}
               <div className="w-full flex gap-2 mb-2 bg-gray-900">
                 <button className="w-full p-2 bg-gray-800 hover:bg-gray-700 text-center" onClick={handleClickLoad}>
                   Load
@@ -215,10 +225,11 @@ export default function Home() {
                   accept=".json"
                 />
               </div>
+              {/* Location List */}
               <ul role="list" className="h-[55rem] flex flex-col gap-2 overflow-y-auto">
                 {locations?.map((location) => (
                   <li key={location.name} className="flex p-4 bg-gray-800 hover:bg-gray-700 cursor-pointer" onClick={() => handleItemClick(location)}>
-                    <img className="h-10 w-10 rounded-full" src={`imgs/${checkItem(location.name)}.svg`} alt="" />
+                    <img className="h-10 w-10 rounded-full" src={`imgs/${getItemNameForImage(location.name)}.svg`} alt="" />
                     <div className="ml-3">
                       <p className="text-sm font-medium text-gray-200">{location.name}</p>
                       <p className="text-sm text-gray-300">{location.id}</p>
@@ -227,7 +238,9 @@ export default function Home() {
                 ))}
               </ul>
             </nav>
+            {/* Right Container */}
             <main className="bg-gray-800 w-full h-full overflow-y-auto grid-rows-[4rem_1fr]">
+              {/* Header Title and Add / Remove Buttons */}
               <div className="w-full h-16 flex justify-between items-center bg-gray-700">
                 <h1 className="font-bold text-xl text-gray-200 p-4">{current?.name}</h1>
                 <div className="flex items-center justify-end pr-4">
@@ -247,8 +260,10 @@ export default function Home() {
                   </button>
                 </div>
               </div>
+              {/* Power Sets Lists fir Location and flag checkboxes*/}
               <div className="w-full h-[50em] p-4 grid grid-cols-2 bg-gray-800">
                 <div className="col-span-1 bg-gray-900 py-2 pl-2 pr-1">
+                  {/* Power Set Lists */}
                   <ul role="list" className='w-full h-full bg-gray-700'>
                     {current?.requiredPowers.map((powers, idx) => (
                       <li key={`test${powers}`} className="flex p-4 odd:bg-gray-800 even:bg-gray-700 hover:bg-gray-600 cursor-pointer" onClick={() => handleClickPowers(powers, idx)}>
@@ -257,6 +272,7 @@ export default function Home() {
                     ))}
                   </ul>
                 </div>
+                {/* Checkboxes */}
                 <div className="col-span-1 bg-gray-900 py-2 pr-2 pl-1">
                   <div className='w-full h-full bg-gray-700 p-4 text-gray-200'>
                     {powers?.map(({ power, value, checked }) => (
