@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Header from 'components/Header';
 import { MainContainer, SecondaryContainer } from 'components/Containers';
-import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
 import { classNames } from 'utils';
+import HeaderButton from 'components/HeaderButton';
 
 // Simulated Power Flags
 const Powers = {
@@ -181,10 +181,10 @@ export default function Home() {
         <MainContainer>
           <Header title="Axiom Verge Item Logic Editor" version="0.0.1">
             <div className="w-1/8 h-full flex gap-2 justify-center items-center">
-              <div className="bg-gray-700 text-sky-400 p-2 px-4 cursor-not-allowed">Items</div>
-              <a href="/locations" className="bg-gray-900 hover:bg-gray-700 hover:text-sky-400 p-2 px-4">Locations</a>
-              <a href="/map/tracker" className="bg-gray-900 hover:bg-gray-700 hover:text-sky-400 p-2 px-4">Tracker</a>
-              <a href="/map/debugger" className="bg-gray-900 hover:bg-gray-700 hover:text-sky-400 p-2 px-4">Debugger</a>
+              <HeaderButton title="Items" url="/items" active={true} />
+              <HeaderButton title="Locations" url="/locations" active={false} />
+              <HeaderButton title="Tracker" url="/map/tracker" active={false} />
+              <HeaderButton title="Debugger" url="/map/debugger" active={false} />
             </div>
           </Header>
           <SecondaryContainer>

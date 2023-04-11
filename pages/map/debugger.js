@@ -5,6 +5,7 @@ import { MainContainer, SecondaryContainer } from 'components/Containers';
 import TileMap from 'components/TileMap.js';
 import path from 'path';
 import DropdownMenu from 'components/DropdownMenu';
+import HeaderButton from 'components/HeaderButton';
 
 // Simulated Power Flags
 export const Powers = {
@@ -154,10 +155,10 @@ export default function Debugger() {
         <MainContainer>
           <Header title="Axiom Verge Logic Tester" version="0.0.1">
             <div className="w-1/8 h-full flex gap-2 justify-center items-center">
-              <a href="/items" className="bg-gray-900 hover:bg-gray-700 hover:text-sky-400 p-2 px-4">Items</a>
-              <a href="/locations" className="bg-gray-900 hover:bg-gray-700 hover:text-sky-400 p-2 px-4">Locations</a>
-              <a href="/map/tracker" className="bg-gray-900 hover:bg-gray-700 hover:text-sky-400 p-2 px-4">Tracker</a>
-              <div className="bg-gray-700 text-sky-400 p-2 px-4 cursor-not-allowed">Debugger</div>
+              <HeaderButton title="Items" url="/items" active={false} />
+              <HeaderButton title="Locations" url="/locations" active={false} />
+              <HeaderButton title="Tracker" url="/map/tracker" active={false} />
+              <HeaderButton title="Debugger" url="/map/debugger" active={true} />
             </div>
           </Header>
           <SecondaryContainer>
