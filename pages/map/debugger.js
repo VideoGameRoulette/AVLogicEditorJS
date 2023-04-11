@@ -93,7 +93,7 @@ export default function Debugger() {
   };
 
   const loadPresetWorld = async () => {
-    let u = isDev ? '/maps/World.csv' : 'maps/World.csv';
+    let u = isDev ? '/maps/World.csv' : '/AVLogicEditorJS/maps/World.csv';
     const response = await fetch(u);
     if (!response.ok) {
       // handle error
@@ -111,7 +111,7 @@ export default function Debugger() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch('/logic/locations_hard.json');
+      const res = await fetch('/AVLogicEditorJS/logic/locations_hard.json');
       const jsonData = await res.json();
       setLocationData(jsonData);
     }

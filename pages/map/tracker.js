@@ -92,7 +92,7 @@ export default function Tracker() {
   };
 
   const loadPresetWorld = async () => {
-    let u = isDev ? '/maps/World.csv' : 'maps/World.csv';
+    let u = isDev ? '/maps/World.csv' : '/AVLogicEditorJS/maps/World.csv';
     const response = await fetch(u);
     if (!response.ok) {
       // handle error
@@ -112,11 +112,11 @@ export default function Tracker() {
     if (gameData === null) return;
     switch (gameData.Progression) {
       case 1:
-        return isDev ? '/logic/locations_normal.json' : 'logic/locations_normal.json';
+        return isDev ? '/logic/locations_normal.json' : '/AVLogicEditorJS/logic/locations_normal.json';
       case 2:
-        return isDev ? '/logic/locations_hard.json' : 'logic/locations_hard.json';
+        return isDev ? '/logic/locations_hard.json' : '/AVLogicEditorJS/logic/locations_hard.json';
       default:
-        return isDev ? '/logic/locations_easy.json' : 'logic/locations_easy.json';
+        return isDev ? '/logic/locations_easy.json' : '/AVLogicEditorJS/logic/locations_easy.json';
     }
   };
 
