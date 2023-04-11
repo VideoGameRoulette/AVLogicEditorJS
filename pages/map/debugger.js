@@ -7,6 +7,8 @@ import path from 'path';
 import DropdownMenu from 'components/DropdownMenu';
 import HeaderButton from 'components/HeaderButton';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 // Simulated Power Flags
 export const Powers = {
   None: 0,
@@ -91,13 +93,14 @@ export default function Debugger() {
   };
 
   const loadPresetWorld = async () => {
-    const response = await fetch('/maps/World.csv');
+    let u = isDev ? '/maps/World.csv' : 'maps/World.csv';
+    const response = await fetch(u);
     if (!response.ok) {
       // handle error
       return;
     }
     const fileContent = await response.text();
-    const fileName = path.basename('/maps/World.csv');
+    const fileName = path.basename(u);
     const file = new File([fileContent], fileName);
     handlePresetFile(file);
   };

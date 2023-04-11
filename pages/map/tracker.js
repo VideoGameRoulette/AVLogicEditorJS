@@ -3,6 +3,8 @@ import Head from 'next/head';
 import path from 'path';
 import { useState, useEffect } from 'react';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 // Simulated Power Flags
 export const Powers = {
   None: 0,
@@ -90,13 +92,14 @@ export default function Tracker() {
   };
 
   const loadPresetWorld = async () => {
-    const response = await fetch('/maps/World.csv');
+    let u = isDev ? '/maps/World.csv' : 'maps/World.csv';
+    const response = await fetch(u);
     if (!response.ok) {
       // handle error
       return;
     }
     const fileContent = await response.text();
-    const fileName = path.basename('/maps/World.csv');
+    const fileName = path.basename(u);
     const file = new File([fileContent], fileName);
     handlePresetFile(file);
   };
@@ -109,11 +112,11 @@ export default function Tracker() {
     if (gameData === null) return;
     switch (gameData.Progression) {
       case 1:
-        return '/logic/locations_normal.json';
+        return isDev ? '/logic/locations_normal.json' : 'logic/locations_normal.json';
       case 2:
-        return '/logic/locations_hard.json';
+        return isDev ? '/logic/locations_hard.json' : 'logic/locations_hard.json';
       default:
-        return '/logic/locations_easy.json';
+        return isDev ? '/logic/locations_easy.json' : 'logic/locations_easy.json';
     }
   };
 
