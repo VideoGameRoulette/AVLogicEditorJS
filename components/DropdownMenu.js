@@ -1,4 +1,4 @@
-import { Powers } from "pages/map.js";
+import { Powers } from "pages/map/debugger.js";
 
 export default function MyComponent({ selectedPower, setSelectedPower }) {
 

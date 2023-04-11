@@ -1,1405 +1,1406 @@
 [
-    {
-        "name": "DataDisruptor",
-        "requiredPowers": [
-            0
-        ],
-        "id": 1
-    },
-    {
-        "name": "Nova",
-        "requiredPowers": [
-            1,
-            4,
-            512
-        ],
-        "id": 2
-    },
-    {
-        "name": "SizeNode1",
-        "requiredPowers": [
-            2,
-            128,
-            512,
-            1024,
-            32768
-        ],
-        "id": 3
-    },
-    {
-        "name": "Drill",
-        "requiredPowers": [
-            2,
-            129,
-            512,
-            513,
-            1028,
-            32768,
-            32800
-        ],
-        "id": 4
-    },
-    {
-        "name": "PowerNode1",
-        "requiredPowers": [
-            6,
-            128,
-            516,
-            1028,
-            32768
-        ],
-        "id": 5
-    },
-    {
-        "name": "MultiDisruptor",
-        "requiredPowers": [
-            6,
-            128,
-            516,
-            1028,
-            32768
-        ],
-        "id": 6
-    },
-    {
-        "name": "HealthNode1",
-        "requiredPowers": [
-            4,
-            512,
-            32768
-        ],
-        "id": 7
-    },
-    {
-        "name": "HealthNodeFragment1",
-        "requiredPowers": [
-            4,
-            32768
-        ],
-        "id": 8
-    },
-    {
-        "name": "Kilver",
-        "requiredPowers": [
-            4,
-            512,
-            32768
-        ],
-        "id": 9
-    },
-    {
-        "name": "HealthNodeFragment4",
-        "requiredPowers": [
-            12,
-            68,
-            516,
-            1028,
-            2560,
-            32768
-        ],
-        "id": 10
-    },
-    {
-        "name": "AddressDisruptor1",
-        "requiredPowers": [
-            12,
-            68,
-            512,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 11
-    },
-    {
-        "name": "HealthNodeFragment2",
-        "requiredPowers": [
-            20,
-            128,
-            512,
-            1028,
-            32768
-        ],
-        "id": 12
-    },
-    {
-        "name": "PowerNodeFragment7",
-        "requiredPowers": [
-            28,
-            84,
-            528,
-            1044,
-            32768
-        ],
-        "id": 13
-    },
-    {
-        "name": "HealthNode2",
-        "requiredPowers": [
-            28,
-            84,
-            512,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 14
-    },
-    {
-        "name": "SizeNode2",
-        "requiredPowers": [
-            28,
-            84,
-            516,
-            528,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 15
-    },
-    {
-        "name": "Note15",
-        "requiredPowers": [
-            28,
-            84,
-            516,
-            1028,
-            1536,
-            4224,
-            32768
-        ],
-        "id": 16
-    },
-    {
-        "name": "Note24",
-        "requiredPowers": [
-            28,
-            84,
-            516,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 17
-    },
-    {
-        "name": "HealthNodeFragment3",
-        "requiredPowers": [
-            28,
-            84,
-            516,
-            1028,
-            4240,
-            4288,
-            32768,
-            135296
-        ],
-        "id": 18
-    },
-    {
-        "name": "PowerNode2",
-        "requiredPowers": [
-            28,
-            84,
-            516,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 19
-    },
-    {
-        "name": "HighJump",
-        "requiredPowers": [
-            28,
-            84,
-            512,
-            516,
-            1028,
-            1044,
-            4224,
-            32768
-        ],
-        "id": 20
-    },
-    {
-        "name": "FireWall",
-        "requiredPowers": [
-            60,
-            116,
-            152,
-            208,
-            512,
-            516,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 21
-    },
-    {
-        "name": "Note10",
-        "requiredPowers": [
-            60,
-            116,
-            516,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 22
-    },
-    {
-        "name": "HealthNodeFragment14",
-        "requiredPowers": [
-            60,
-            116,
-            516,
-            548,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 23
-    },
-    {
-        "name": "GlitchTeleport",
-        "requiredPowers": [
-            60,
-            84,
-            116,
-            532,
-            564,
-            1028,
-            4225,
-            32768
-        ],
-        "id": 24
-    },
-    {
-        "name": "Note14",
-        "requiredPowers": [
-            68,
-            512,
-            1028,
-            32768
-        ],
-        "id": 25
-    },
-    {
-        "name": "Note7",
-        "requiredPowers": [
-            68,
-            512,
-            1028,
-            32768
-        ],
-        "id": 26
-    },
-    {
-        "name": "RangeNode1",
-        "requiredPowers": [
-            124,
-            152,
-            512,
-            640,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 27
-    },
-    {
-        "name": "RangeNode2",
-        "requiredPowers": [
-            124,
-            576,
-            1028,
-            4288,
-            32768
-        ],
-        "id": 28
-    },
-    {
-        "name": "TendrilsTop",
-        "requiredPowers": [
-            60,
-            544,
-            1028,
-            1536,
-            4224,
-            32768
-        ],
-        "id": 29
-    },
-    {
-        "name": "HealthNodeFragment7",
-        "requiredPowers": [
-            124,
-            512,
-            1028,
-            4288,
-            32768
-        ],
-        "id": 30
-    },
-    {
-        "name": "SizeNode3",
-        "requiredPowers": [
-            60,
-            512,
-            540,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 31
-    },
-    {
-        "name": "HealthNode3",
-        "requiredPowers": [
-            116,
-            528,
-            564,
-            1044,
-            1060,
-            4225,
-            32768
-        ],
-        "id": 32
-    },
-    {
-        "name": "PowerNode3",
-        "requiredPowers": [
-            116,
-            512,
-            1028,
-            4288,
-            32768
-        ],
-        "id": 33
-    },
-    {
-        "name": "DroneGun",
-        "requiredPowers": [
-            116,
-            548,
-            1028,
-            4288,
-            32768
-        ],
-        "id": 34
-    },
-    {
-        "name": "Note16",
-        "requiredPowers": [
-            128
-        ],
-        "id": 35
-    },
-    {
-        "name": "PowerNodeFragment3",
-        "requiredPowers": [
-            128,
-            516,
-            1028,
-            1536,
-            2560,
-            32768
-        ],
-        "id": 36
-    },
-    {
-        "name": "Note28",
-        "requiredPowers": [
-            152,
-            208,
-            640,
-            4224,
-            32768
-        ],
-        "id": 37
-    },
-    {
-        "name": "HealthNodeFragment6",
-        "requiredPowers": [
-            512,
-            604,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 38
-    },
-    {
-        "name": "HealthNodeFragment5",
-        "requiredPowers": [
-            152,
-            208,
-            512,
-            640,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 39
-    },
-    {
-        "name": "PasswordTool",
-        "requiredPowers": [
-            152,
-            208,
-            640,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 40
-    },
-    {
-        "name": "Note19",
-        "requiredPowers": [
-            152,
-            208,
-            640,
-            1028,
-            4224,
-            32768
-        ],
-        "id": 41
-    },
-    {
-        "name": "Note20",
-        "requiredPowers": [
-            152,
-            208,
-            640,
-            1152,
-            4224,
-            32896
-        ],
-        "id": 42
-    },
-    {
-        "name": "Voranj",
-        "requiredPowers": [
-            152,
-            208,
-            640,
-            1152,
-            4224,
-            32896
-        ],
-        "id": 43
-    },
-    {
-        "name": "HealthNodeFragment10",
-        "requiredPowers": [
-            152,
-            208,
-            640,
-            1152,
-            4224,
-            32896
-        ],
-        "id": 44
-    },
-    {
-        "name": "VerticalSpread",
-        "requiredPowers": [
-            240,
-            672,
-            1152,
-            4288,
-            32768
-        ],
-        "id": 45
-    },
-    {
-        "name": "HealthNodeFragment8",
-        "requiredPowers": [
-            240,
-            544,
-            1152,
-            4288,
-            32768,
-            32896
-        ],
-        "id": 46
-    },
-    {
-        "name": "AddressDisruptor2",
-        "requiredPowers": [
-            208,
-            268,
-            640,
-            772,
-            1152,
-            4288,
-            32768
-        ],
-        "id": 47
-    },
-    {
-        "name": "PowerNodeFragment5",
-        "requiredPowers": [
-            384,
-            772,
-            1280,
-            1316,
-            33024
-        ],
-        "id": 48
-    },
-    {
-        "name": "PowerNodeFragment6",
-        "requiredPowers": [
-            416,
-            1316,
-            1408,
-            1792,
-            1796,
-            8576,
-            33024
-        ],
-        "id": 49
-    },
-    {
-        "name": "InertialPulse",
-        "requiredPowers": [
-            268,
-            324,
-            772,
-            1284,
-            4480,
-            32768
-        ],
-        "id": 50
-    },
-    {
-        "name": "PowerNodeFragment8",
-        "requiredPowers": [
-            300,
-            356,
-            512,
-            1028,
-            1060,
-            1284,
-            32768
-        ],
-        "id": 51
-    },
-    {
-        "name": "HealthNodeFragment9",
-        "requiredPowers": [
-            480,
-            1152,
-            1408,
-            32896
-        ],
-        "id": 52
-    },
-    {
-        "name": "HealthNode4",
-        "requiredPowers": [
-            356,
-            800,
-            1028,
-            1536,
-            4480,
-            5248,
-            32768
-        ],
-        "id": 53
-    },
-    {
-        "name": "Grapple",
-        "requiredPowers": [
-            480,
-            1028,
-            4736,
-            5248,
-            32768
-        ],
-        "id": 54
-    },
-    {
-        "name": "Note25",
-        "requiredPowers": [
-            640,
-            1152,
-            4224,
-            32896
-        ],
-        "id": 55
-    },
-    {
-        "name": "HealthNodeFragment13",
-        "requiredPowers": [
-            896,
-            1284,
-            32768
-        ],
-        "id": 56
-    },
-    {
-        "name": "PowerNodeFragment1",
-        "requiredPowers": [
-            528,
-            532,
-            572,
-            4228,
-            4240,
-            9344,
-            9376,
-            33280,
-            41088
-        ],
-        "id": 57
-    },
-    {
-        "name": "TetheredCharge",
-        "requiredPowers": [
-            720,
-            1076,
-            1556,
-            5264,
-            32784,
-            263172,
-            294912
-        ],
-        "id": 58
-    },
-    {
-        "name": "Note13",
-        "requiredPowers": [
-            672,
-            736,
-            752,
-            1664,
-            4288
-        ],
-        "id": 59
-    },
-    {
-        "name": "HealthNodeFragment12",
-        "requiredPowers": [
-            672,
-            736,
-            752,
-            1664,
-            4288
-        ],
-        "id": 60
-    },
-    {
-        "name": "HealthNodeFragment11",
-        "requiredPowers": [
-            868,
-            1028,
-            4736,
-            5248,
-            32768
-        ],
-        "id": 61
-    },
-    {
-        "name": "PowerNode4",
-        "requiredPowers": [
-            868,
-            1060,
-            1152,
-            1408,
-            1540,
-            1796,
-            4736,
-            5248,
-            32768
-        ],
-        "id": 62
-    },
-    {
-        "name": "Note17",
-        "requiredPowers": [
-            868,
-            1796,
-            4292,
-            4304,
-            12480,
-            32768,
-            33540
-        ],
-        "id": 63
-    },
-    {
-        "name": "PowerNodeFragment14",
-        "requiredPowers": [
-            868,
-            1796,
-            4292,
-            4304,
-            12480,
-            32800,
-            33540
-        ],
-        "id": 64
-    },
-    {
-        "name": "Reflect",
-        "requiredPowers": [
-            672,
-            736,
-            752,
-            1664,
-            4288,
-            4292,
-            4304,
-            33408
-        ],
-        "id": 65
-    },
-    {
-        "name": "EnhancedLaunch",
-        "requiredPowers": [
-            868,
-            1796,
-            4736,
-            5248,
-            12480,
-            32768,
-            33540
-        ],
-        "id": 66
-    },
-    {
-        "name": "BlackCoat",
-        "requiredPowers": [
-            356,
-            512,
-            1028,
-            1060,
-            32768
-        ],
-        "id": 67
-    },
-    {
-        "name": "RangeNode4",
-        "requiredPowers": [
-            448,
-            512,
-            1284,
-            1408,
-            1796,
-            33056,
-            33152,
-            33536
-        ],
-        "id": 68
-    },
-    {
-        "name": "PowerNodeFragment9",
-        "requiredPowers": [
-            512,
-            1028,
-            1060,
-            1540,
-            32768
-        ],
-        "id": 69
-    },
-    {
-        "name": "Note12",
-        "requiredPowers": [
-            1536,
-            1572,
-            4800,
-            12480,
-            13440,
-            33280,
-            45184,
-            528576
-        ],
-        "id": 70
-    },
-    {
-        "name": "PowerNodeFragment16",
-        "requiredPowers": [
-            1664,
-            4288,
-            5248,
-            32800,
-            33280,
-            36992
-        ],
-        "id": 71
-    },
-    {
-        "name": "Note9",
-        "requiredPowers": [
-            544,
-            1028,
-            1536,
-            32768
-        ],
-        "id": 72
-    },
-    {
-        "name": "Note22",
-        "requiredPowers": [
-            512,
-            1152,
-            1184,
-            1664,
-            5248,
-            32896
-        ],
-        "id": 73
-    },
-    {
-        "name": "PowerNodeFragment15",
-        "requiredPowers": [
-            512,
-            1028,
-            1060,
-            1540,
-            5248,
-            32768
-        ],
-        "id": 74
-    },
-    {
-        "name": "PowerNodeFragment13",
-        "requiredPowers": [
-            480,
-            512,
-            960,
-            1408,
-            1920,
-            32896
-        ],
-        "id": 75
-    },
-    {
-        "name": "HealthNodeFragment16",
-        "requiredPowers": [
-            640,
-            1152,
-            1920,
-            32896,
-            33280
-        ],
-        "id": 76
-    },
-    {
-        "name": "HealthNode5",
-        "requiredPowers": [
-            356,
-            512,
-            1284,
-            1316,
-            1796,
-            32768
-        ],
-        "id": 77
-    },
-    {
-        "name": "Note8",
-        "requiredPowers": [
-            544,
-            868,
-            1284,
-            1316,
-            1796,
-            4548,
-            32768,
-            32800
-        ],
-        "id": 78
-    },
-    {
-        "name": "Note23",
-        "requiredPowers": [
-            512,
-            1284,
-            1316,
-            1796,
-            32768
-        ],
-        "id": 79
-    },
-    {
-        "name": "HealthNodeFragment18",
-        "requiredPowers": [
-            512,
-            1284,
-            1316,
-            1796,
-            4544,
-            32768
-        ],
-        "id": 80
-    },
-    {
-        "name": "Note18",
-        "requiredPowers": [
-            1060,
-            1540,
-            5248,
-            32768
-        ],
-        "id": 81
-    },
-    {
-        "name": "Note27",
-        "requiredPowers": [
-            1060,
-            1540,
-            5248,
-            32768
-        ],
-        "id": 82
-    },
-    {
-        "name": "GlitchBomb",
-        "requiredPowers": [
-            1060,
-            1540,
-            5248,
-            32768
-        ],
-        "id": 83
-    },
-    {
-        "name": "HealthNode9",
-        "requiredPowers": [
-            2208,
-            2592,
-            3072,
-            6272,
-            34816
-        ],
-        "id": 84
-    },
-    {
-        "name": "LightningGun",
-        "requiredPowers": [
-            640,
-            2176,
-            33280,
-            34816
-        ],
-        "id": 85
-    },
-    {
-        "name": "PowerNodeFragment4",
-        "requiredPowers": [
-            2560,
-            2564,
-            3076,
-            3108,
-            6272,
-            34816
-        ],
-        "id": 86
-    },
-    {
-        "name": "PowerNode5",
-        "requiredPowers": [
-            3108,
-            3588,
-            5504,
-            7296,
-            13440,
-            33312,
-            34816,
-            34848,
-            39040,
-            45184
-        ],
-        "id": 87
-    },
-    {
-        "name": "HealthNode6",
-        "requiredPowers": [
-            3108,
-            3588,
-            5504,
-            7296,
-            13440,
-            33312,
-            34816,
-            34848,
-            39040,
-            45184
-        ],
-        "id": 88
-    },
-    {
-        "name": "RangeNode3",
-        "requiredPowers": [
-            1184,
-            1540,
-            1664,
-            32896
-        ],
-        "id": 89
-    },
-    {
-        "name": "Shards",
-        "requiredPowers": [
-            2148,
-            3076,
-            6336,
-            34816
-        ],
-        "id": 90
-    },
-    {
-        "name": "Note5",
-        "requiredPowers": [
-            1060,
-            1540,
-            2660,
-            3076,
-            32768
-        ],
-        "id": 91
-    },
-    {
-        "name": "DroneTeleport",
-        "requiredPowers": [
-            1184,
-            1664,
-            3232,
-            32896
-        ],
-        "id": 92
-    },
-    {
-        "name": "HealthNodeFragment19",
-        "requiredPowers": [
-            1536,
-            1572,
-            33280,
-            529536,
-            537728,
-            561280,
-            569472
-        ],
-        "id": 93
-    },
-    {
-        "name": "DistortionField",
-        "requiredPowers": [
-            33280,
-            539776,
-            571520
-        ],
-        "id": 94
-    },
-    {
-        "name": "Note2",
-        "requiredPowers": [
-            128,
-            4224
-        ],
-        "id": 95
-    },
-    {
-        "name": "DataGrenade",
-        "requiredPowers": [
-            5248,
-            36992
-        ],
-        "id": 96
-    },
-    {
-        "name": "TriCone",
-        "requiredPowers": [
-            516,
-            536768,
-            537728,
-            569472
-        ],
-        "id": 97
-    },
-    {
-        "name": "Note4",
-        "requiredPowers": [
-            1540,
-            6816,
-            7296,
-            32768
-        ],
-        "id": 98
-    },
-    {
-        "name": "HealthNode7",
-        "requiredPowers": [
-            5280,
-            5760,
-            6816,
-            7296,
-            36992,
-            39040
-        ],
-        "id": 99
-    },
-    {
-        "name": "PowerNodeFragment17",
-        "requiredPowers": [
-            5280,
-            5760,
-            6816,
-            7296,
-            36992,
-            39040
-        ],
-        "id": 100
-    },
-    {
-        "name": "TendrilsBottom",
-        "requiredPowers": [
-            1568,
-            13440,
-            33280,
-            33312,
-            45184
-        ],
-        "id": 101
-    },
-    {
-        "name": "HealthNodeFragment20",
-        "requiredPowers": [
-            13440,
-            33312,
-            37504,
-            45184,
-            529024,
-            529536,
-            561280
-        ],
-        "id": 102
-    },
-    {
-        "name": "Note1",
-        "requiredPowers": [
-            13440,
-            33280,
-            33312,
-            45184
-        ],
-        "id": 103
-    },
-    {
-        "name": "Note3",
-        "requiredPowers": [
-            13440,
-            45184,
-            529536,
-            561280
-        ],
-        "id": 104
-    },
-    {
-        "name": "BreachSuppressor",
-        "requiredPowers": [
-            13440,
-            45184,
-            529536,
-            561280
-        ],
-        "id": 105
-    },
-    {
-        "name": "PowerNode6",
-        "requiredPowers": [
-            29824,
-            33280,
-            45184,
-            545920,
-            561280
-        ],
-        "id": 106
-    },
-    {
-        "name": "HealthNodeFragment17",
-        "requiredPowers": [
-            29824,
-            33280,
-            45184,
-            530048,
-            545920,
-            561280
-        ],
-        "id": 107
-    },
-    {
-        "name": "RedCoat",
-        "requiredPowers": [
-            29824,
-            32768,
-            33280,
-            45184,
-            530048,
-            545920
-        ],
-        "id": 108
-    },
-    {
-        "name": "IonBeam",
-        "requiredPowers": [
-            32768
-        ],
-        "id": 109
-    },
-    {
-        "name": "PowerNodeFragment10",
-        "requiredPowers": [
-            32768,
-            263172
-        ],
-        "id": 110
-    },
-    {
-        "name": "PowerNodeFragment18",
-        "requiredPowers": [
-            32768,
-            45184
-        ],
-        "id": 111
-    },
-    {
-        "name": "HealthNode8",
-        "requiredPowers": [
-            33312,
-            45184,
-            561280
-        ],
-        "id": 112
-    },
-    {
-        "name": "PowerNodeFragment11",
-        "requiredPowers": [
-            33312,
-            45184,
-            561280
-        ],
-        "id": 113
-    },
-    {
-        "name": "Note6",
-        "requiredPowers": [
-            33312,
-            45184,
-            561280
-        ],
-        "id": 114
-    },
-    {
-        "name": "PowerNodeFragment12",
-        "requiredPowers": [
-            33312,
-            45184,
-            561280
-        ],
-        "id": 115
-    },
-    {
-        "name": "SizeNode4",
-        "requiredPowers": [
-            33312,
-            45184,
-            561280
-        ],
-        "id": 116
-    },
-    {
-        "name": "Note26",
-        "requiredPowers": [
-            33312,
-            45184,
-            561280
-        ],
-        "id": 117
-    },
-    {
-        "name": "Scythe",
-        "requiredPowers": [
-            33312,
-            45184,
-            561280
-        ],
-        "id": 118
-    },
-    {
-        "name": "Note21",
-        "requiredPowers": [
-            33440,
-            45184,
-            561280
-        ],
-        "id": 119
-    },
-    {
-        "name": "Note11",
-        "requiredPowers": [
-            33280,
-            33312,
-            45184
-        ],
-        "id": 120
-    },
-    {
-        "name": "WallTrace",
-        "requiredPowers": [
-            69760,
-            98336,
-            98816
-        ],
-        "id": 121
-    },
-    {
-        "name": "PowerNodeFragment2",
-        "requiredPowers": [
-            128,
-            69760,
-            98336,
-            98816
-        ],
-        "id": 122
-    },
-    {
-        "name": "FlameThrower",
-        "requiredPowers": [
-            71552,
-            98816,
-            98848,
-            102528
-        ],
-        "id": 123
-    },
-    {
-        "name": "Swim",
-        "requiredPowers": [
-            70816,
-            78976,
-            98816,
-            98848,
-            102528,
-            110720
-        ],
-        "id": 124
-    },
-    {
-        "name": "HealthNodeFragment15",
-        "requiredPowers": [
-            772,
-            1284,
-            4480,
-            33028
-        ],
-        "id": 125
-    }
+  {
+    "name": "DataDisruptor",
+    "requiredPowers": [
+      0
+    ],
+    "id": 1
+  },
+  {
+    "name": "Nova",
+    "requiredPowers": [
+      1,
+      4,
+      512
+    ],
+    "id": 2
+  },
+  {
+    "name": "SizeNode1",
+    "requiredPowers": [
+      2,
+      128,
+      512,
+      1024,
+      32768
+    ],
+    "id": 3
+  },
+  {
+    "name": "Drill",
+    "requiredPowers": [
+      2,
+      129,
+      512,
+      513,
+      1028,
+      32768,
+      32800
+    ],
+    "id": 4
+  },
+  {
+    "name": "PowerNode1",
+    "requiredPowers": [
+      6,
+      128,
+      516,
+      1028,
+      32768
+    ],
+    "id": 5
+  },
+  {
+    "name": "MultiDisruptor",
+    "requiredPowers": [
+      6,
+      128,
+      516,
+      1028,
+      32768
+    ],
+    "id": 6
+  },
+  {
+    "name": "HealthNode1",
+    "requiredPowers": [
+      4,
+      512,
+      32768
+    ],
+    "id": 7
+  },
+  {
+    "name": "HealthNodeFragment1",
+    "requiredPowers": [
+      20,
+      128,
+      512,
+      1028,
+      32768
+    ],
+    "id": 8
+  },
+  {
+    "name": "Kilver",
+    "requiredPowers": [
+      4,
+      512,
+      32768
+    ],
+    "id": 9
+  },
+  {
+    "name": "HealthNodeFragment4",
+    "requiredPowers": [
+      12,
+      68,
+      516,
+      1028,
+      2560,
+      32768
+    ],
+    "id": 10
+  },
+  {
+    "name": "AddressDisruptor1",
+    "requiredPowers": [
+      12,
+      68,
+      512,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 11
+  },
+  {
+    "name": "HealthNodeFragment2",
+    "requiredPowers": [
+      20,
+      128,
+      512,
+      1028,
+      32768
+    ],
+    "id": 12
+  },
+  {
+    "name": "PowerNodeFragment7",
+    "requiredPowers": [
+      28,
+      84,
+      528,
+      1044,
+      32768
+    ],
+    "id": 13
+  },
+  {
+    "name": "HealthNode2",
+    "requiredPowers": [
+      28,
+      84,
+      512,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 14
+  },
+  {
+    "name": "SizeNode2",
+    "requiredPowers": [
+      28,
+      84,
+      516,
+      528,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 15
+  },
+  {
+    "name": "Note15",
+    "requiredPowers": [
+      28,
+      84,
+      516,
+      1028,
+      1536,
+      4224,
+      32768
+    ],
+    "id": 16
+  },
+  {
+    "name": "Note24",
+    "requiredPowers": [
+      28,
+      84,
+      516,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 17
+  },
+  {
+    "name": "HealthNodeFragment3",
+    "requiredPowers": [
+      28,
+      84,
+      516,
+      1028,
+      4240,
+      4288,
+      32768,
+      135296
+    ],
+    "id": 18
+  },
+  {
+    "name": "PowerNode2",
+    "requiredPowers": [
+      28,
+      84,
+      516,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 19
+  },
+  {
+    "name": "HighJump",
+    "requiredPowers": [
+      28,
+      84,
+      512,
+      516,
+      1028,
+      1044,
+      4224,
+      32768
+    ],
+    "id": 20
+  },
+  {
+    "name": "FireWall",
+    "requiredPowers": [
+      60,
+      116,
+      152,
+      208,
+      512,
+      516,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 21
+  },
+  {
+    "name": "Note10",
+    "requiredPowers": [
+      60,
+      116,
+      516,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 22
+  },
+  {
+    "name": "HealthNodeFragment14",
+    "requiredPowers": [
+      60,
+      116,
+      516,
+      548,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 23
+  },
+  {
+    "name": "GlitchTeleport",
+    "requiredPowers": [
+      60,
+      84,
+      116,
+      532,
+      564,
+      1028,
+      4225,
+      32768
+    ],
+    "id": 24
+  },
+  {
+    "name": "Note14",
+    "requiredPowers": [
+      68,
+      512,
+      1028,
+      32768
+    ],
+    "id": 25
+  },
+  {
+    "name": "Note7",
+    "requiredPowers": [
+      68,
+      512,
+      1028,
+      32768
+    ],
+    "id": 26
+  },
+  {
+    "name": "RangeNode1",
+    "requiredPowers": [
+      124,
+      152,
+      512,
+      640,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 27
+  },
+  {
+    "name": "RangeNode2",
+    "requiredPowers": [
+      124,
+      576,
+      1028,
+      4288,
+      32768
+    ],
+    "id": 28
+  },
+  {
+    "name": "TendrilsTop",
+    "requiredPowers": [
+      60,
+      544,
+      1028,
+      1536,
+      4224,
+      32768
+    ],
+    "id": 29
+  },
+  {
+    "name": "HealthNodeFragment7",
+    "requiredPowers": [
+      124,
+      512,
+      1028,
+      4288,
+      32768
+    ],
+    "id": 30
+  },
+  {
+    "name": "SizeNode3",
+    "requiredPowers": [
+      60,
+      512,
+      540,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 31
+  },
+  {
+    "name": "HealthNode3",
+    "requiredPowers": [
+      116,
+      528,
+      564,
+      1044,
+      1060,
+      4225,
+      32768
+    ],
+    "id": 32
+  },
+  {
+    "name": "PowerNode3",
+    "requiredPowers": [
+      116,
+      512,
+      1028,
+      4288,
+      32768
+    ],
+    "id": 33
+  },
+  {
+    "name": "DroneGun",
+    "requiredPowers": [
+      116,
+      548,
+      1028,
+      4288,
+      32768
+    ],
+    "id": 34
+  },
+  {
+    "name": "Note16",
+    "requiredPowers": [
+      128
+    ],
+    "id": 35
+  },
+  {
+    "name": "PowerNodeFragment3",
+    "requiredPowers": [
+      128,
+      516,
+      1028,
+      1536,
+      2560,
+      32768
+    ],
+    "id": 36
+  },
+  {
+    "name": "Note28",
+    "requiredPowers": [
+      152,
+      208,
+      640,
+      4224,
+      32768
+    ],
+    "id": 37
+  },
+  {
+    "name": "HealthNodeFragment6",
+    "requiredPowers": [
+      512,
+      604,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 38
+  },
+  {
+    "name": "HealthNodeFragment5",
+    "requiredPowers": [
+      152,
+      208,
+      512,
+      640,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 39
+  },
+  {
+    "name": "PasswordTool",
+    "requiredPowers": [
+      152,
+      208,
+      640,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 40
+  },
+  {
+    "name": "Note19",
+    "requiredPowers": [
+      152,
+      208,
+      640,
+      1028,
+      4224,
+      32768
+    ],
+    "id": 41
+  },
+  {
+    "name": "Note20",
+    "requiredPowers": [
+      152,
+      208,
+      640,
+      1152,
+      4224,
+      32896
+    ],
+    "id": 42
+  },
+  {
+    "name": "Voranj",
+    "requiredPowers": [
+      152,
+      208,
+      640,
+      1152,
+      4224,
+      32896
+    ],
+    "id": 43
+  },
+  {
+    "name": "HealthNodeFragment10",
+    "requiredPowers": [
+      152,
+      208,
+      640,
+      1152,
+      4224,
+      32896
+    ],
+    "id": 44
+  },
+  {
+    "name": "VerticalSpread",
+    "requiredPowers": [
+      240,
+      672,
+      1152,
+      4288,
+      32768
+    ],
+    "id": 45
+  },
+  {
+    "name": "HealthNodeFragment8",
+    "requiredPowers": [
+      240,
+      544,
+      1152,
+      4288,
+      32768,
+      32896
+    ],
+    "id": 46
+  },
+  {
+    "name": "AddressDisruptor2",
+    "requiredPowers": [
+      208,
+      268,
+      640,
+      772,
+      1152,
+      4288,
+      32768
+    ],
+    "id": 47
+  },
+  {
+    "name": "PowerNodeFragment5",
+    "requiredPowers": [
+      384,
+      772,
+      1280,
+      1316,
+      33024
+    ],
+    "id": 48
+  },
+  {
+    "name": "PowerNodeFragment6",
+    "requiredPowers": [
+      416,
+      1316,
+      1408,
+      1792,
+      1796,
+      8576,
+      33024
+    ],
+    "id": 49
+  },
+  {
+    "name": "InertialPulse",
+    "requiredPowers": [
+      268,
+      324,
+      772,
+      1284,
+      4480,
+      32768
+    ],
+    "id": 50
+  },
+  {
+    "name": "PowerNodeFragment8",
+    "requiredPowers": [
+      300,
+      356,
+      512,
+      1028,
+      1060,
+      1284,
+      32768
+    ],
+    "id": 51
+  },
+  {
+    "name": "HealthNodeFragment9",
+    "requiredPowers": [
+      480,
+      1152,
+      1408,
+      32896
+    ],
+    "id": 52
+  },
+  {
+    "name": "HealthNode4",
+    "requiredPowers": [
+      356,
+      800,
+      1028,
+      1536,
+      4480,
+      5248,
+      32768
+    ],
+    "id": 53
+  },
+  {
+    "name": "Grapple",
+    "requiredPowers": [
+      480,
+      1028,
+      4736,
+      5248,
+      32768
+    ],
+    "id": 54
+  },
+  {
+    "name": "Note25",
+    "requiredPowers": [
+      640,
+      1152,
+      4224,
+      32896
+    ],
+    "id": 55
+  },
+  {
+    "name": "HealthNodeFragment13",
+    "requiredPowers": [
+      896,
+      1284,
+      32768
+    ],
+    "id": 56
+  },
+  {
+    "name": "PowerNodeFragment1",
+    "requiredPowers": [
+      528,
+      532,
+      572,
+      4228,
+      4240,
+      9344,
+      9376,
+      33280,
+      41088
+    ],
+    "id": 57
+  },
+  {
+    "name": "TetheredCharge",
+    "requiredPowers": [
+      720,
+      1076,
+      1556,
+      5264,
+      32784,
+      263172,
+      294912
+    ],
+    "id": 58
+  },
+  {
+    "name": "Note13",
+    "requiredPowers": [
+      672,
+      736,
+      752,
+      1664,
+      4288
+    ],
+    "id": 59
+  },
+  {
+    "name": "HealthNodeFragment12",
+    "requiredPowers": [
+      672,
+      736,
+      752,
+      1664,
+      4288
+    ],
+    "id": 60
+  },
+  {
+    "name": "HealthNodeFragment11",
+    "requiredPowers": [
+      868,
+      1028,
+      4736,
+      5248,
+      32768
+    ],
+    "id": 61
+  },
+  {
+    "name": "PowerNode4",
+    "requiredPowers": [
+      868,
+      1060,
+      1152,
+      1408,
+      1540,
+      1796,
+      4736,
+      5248,
+      32768
+    ],
+    "id": 62
+  },
+  {
+    "name": "Note17",
+    "requiredPowers": [
+      868,
+      1796,
+      4292,
+      4304,
+      12480,
+      32768,
+      33540
+    ],
+    "id": 63
+  },
+  {
+    "name": "PowerNodeFragment14",
+    "requiredPowers": [
+      868,
+      1796,
+      4292,
+      4304,
+      12480,
+      32800,
+      33540
+    ],
+    "id": 64
+  },
+  {
+    "name": "Reflect",
+    "requiredPowers": [
+      672,
+      736,
+      752,
+      1664,
+      4288,
+      4292,
+      4304,
+      33408
+    ],
+    "id": 65
+  },
+  {
+    "name": "EnhancedLaunch",
+    "requiredPowers": [
+      868,
+      1796,
+      4736,
+      5248,
+      12480,
+      32768,
+      33540
+    ],
+    "id": 66
+  },
+  {
+    "name": "BlackCoat",
+    "requiredPowers": [
+      356,
+      512,
+      1028,
+      1060,
+      32768
+    ],
+    "id": 67
+  },
+  {
+    "name": "RangeNode4",
+    "requiredPowers": [
+      448,
+      512,
+      1284,
+      1408,
+      1796,
+      33056,
+      33152,
+      33536
+    ],
+    "id": 68
+  },
+  {
+    "name": "PowerNodeFragment9",
+    "requiredPowers": [
+      512,
+      1028,
+      1060,
+      1540,
+      32768
+    ],
+    "id": 69
+  },
+  {
+    "name": "Note12",
+    "requiredPowers": [
+      1536,
+      1572,
+      4800,
+      12480,
+      13440,
+      33280,
+      45184,
+      528576
+    ],
+    "id": 70
+  },
+  {
+    "name": "PowerNodeFragment16",
+    "requiredPowers": [
+      1664,
+      4288,
+      5248,
+      32800,
+      33280,
+      36992
+    ],
+    "id": 71
+  },
+  {
+    "name": "Note9",
+    "requiredPowers": [
+      544,
+      1028,
+      1536,
+      32768
+    ],
+    "id": 72
+  },
+  {
+    "name": "Note22",
+    "requiredPowers": [
+      1152,
+      1184,
+      1664,
+      5248,
+      32896
+    ],
+    "id": 73
+  },
+  {
+    "name": "PowerNodeFragment15",
+    "requiredPowers": [
+      512,
+      1028,
+      1060,
+      1540,
+      5248,
+      32768
+    ],
+    "id": 74
+  },
+  {
+    "name": "PowerNodeFragment13",
+    "requiredPowers": [
+      480,
+      512,
+      960,
+      1408,
+      1920,
+      32896
+    ],
+    "id": 75
+  },
+  {
+    "name": "HealthNodeFragment16",
+    "requiredPowers": [
+      640,
+      1152,
+      1920,
+      32896,
+      33280
+    ],
+    "id": 76
+  },
+  {
+    "name": "HealthNode5",
+    "requiredPowers": [
+      356,
+      512,
+      1284,
+      1316,
+      1796,
+      32768
+    ],
+    "id": 77
+  },
+  {
+    "name": "Note8",
+    "requiredPowers": [
+      544,
+      868,
+      1284,
+      1316,
+      1796,
+      4548,
+      32768,
+      32800
+    ],
+    "id": 78
+  },
+  {
+    "name": "Note23",
+    "requiredPowers": [
+      512,
+      1284,
+      1316,
+      1796,
+      32768
+    ],
+    "id": 79
+  },
+  {
+    "name": "HealthNodeFragment18",
+    "requiredPowers": [
+      1284,
+      1316,
+      1796,
+      4544,
+      32768
+    ],
+    "id": 80
+  },
+  {
+    "name": "Note18",
+    "requiredPowers": [
+      1060,
+      1540,
+      5248,
+      32768
+    ],
+    "id": 81
+  },
+  {
+    "name": "Note27",
+    "requiredPowers": [
+      1060,
+      1540,
+      5248,
+      32768
+    ],
+    "id": 82
+  },
+  {
+    "name": "GlitchBomb",
+    "requiredPowers": [
+      1060,
+      1540,
+      5248,
+      32768
+    ],
+    "id": 83
+  },
+  {
+    "name": "HealthNode9",
+    "requiredPowers": [
+      2208,
+      2592,
+      3072,
+      6272,
+      34816
+    ],
+    "id": 84
+  },
+  {
+    "name": "LightningGun",
+    "requiredPowers": [
+      640,
+      2176,
+      33280,
+      34816
+    ],
+    "id": 85
+  },
+  {
+    "name": "PowerNodeFragment4",
+    "requiredPowers": [
+      2560,
+      2564,
+      3076,
+      3108,
+      6272,
+      34816
+    ],
+    "id": 86
+  },
+  {
+    "name": "PowerNode5",
+    "requiredPowers": [
+      3108,
+      3588,
+      5504,
+      7296,
+      13440,
+      33312,
+      34816,
+      34848,
+      39040,
+      45184
+    ],
+    "id": 87
+  },
+  {
+    "name": "HealthNode6",
+    "requiredPowers": [
+      3108,
+      3588,
+      5504,
+      7296,
+      13440,
+      33312,
+      34816,
+      34848,
+      39040,
+      45184
+    ],
+    "id": 88
+  },
+  {
+    "name": "RangeNode3",
+    "requiredPowers": [
+      1184,
+      1540,
+      1664,
+      32896
+    ],
+    "id": 89
+  },
+  {
+    "name": "Shards",
+    "requiredPowers": [
+      2148,
+      3076,
+      6336,
+      34816
+    ],
+    "id": 90
+  },
+  {
+    "name": "Note5",
+    "requiredPowers": [
+      1060,
+      1540,
+      2660,
+      3076,
+      32768
+    ],
+    "id": 91
+  },
+  {
+    "name": "DroneTeleport",
+    "requiredPowers": [
+      1184,
+      1664,
+      3232,
+      32896
+    ],
+    "id": 92
+  },
+  {
+    "name": "HealthNodeFragment19",
+    "requiredPowers": [
+      1536,
+      1572,
+      33280,
+      529536,
+      537728,
+      561280,
+      569472
+    ],
+    "id": 93
+  },
+  {
+    "name": "DistortionField",
+    "requiredPowers": [
+      33280,
+      539776,
+      571520
+    ],
+    "id": 94
+  },
+  {
+    "name": "Note2",
+    "requiredPowers": [
+      128,
+      4224
+    ],
+    "id": 95
+  },
+  {
+    "name": "DataGrenade",
+    "requiredPowers": [
+      5248,
+      36992
+    ],
+    "id": 96
+  },
+  {
+    "name": "TriCone",
+    "requiredPowers": [
+      516,
+      536768,
+      537728,
+      569472
+    ],
+    "id": 97
+  },
+  {
+    "name": "Note4",
+    "requiredPowers": [
+      1540,
+      6816,
+      7296,
+      32768
+    ],
+    "id": 98
+  },
+  {
+    "name": "HealthNode7",
+    "requiredPowers": [
+      5280,
+      5760,
+      6816,
+      7296,
+      36992,
+      39040
+    ],
+    "id": 99
+  },
+  {
+    "name": "PowerNodeFragment17",
+    "requiredPowers": [
+      5280,
+      5760,
+      6816,
+      7296,
+      36992,
+      39040
+    ],
+    "id": 100
+  },
+  {
+    "name": "TendrilsBottom",
+    "requiredPowers": [
+      1568,
+      13440,
+      33280,
+      33312,
+      45184
+    ],
+    "id": 101
+  },
+  {
+    "name": "HealthNodeFragment20",
+    "requiredPowers": [
+      13440,
+      33312,
+      37504,
+      45184,
+      529024,
+      529536,
+      561280
+    ],
+    "id": 102
+  },
+  {
+    "name": "Note1",
+    "requiredPowers": [
+      13440,
+      33280,
+      33312,
+      45184
+    ],
+    "id": 103
+  },
+  {
+    "name": "Note3",
+    "requiredPowers": [
+      13440,
+      45184,
+      529536,
+      561280
+    ],
+    "id": 104
+  },
+  {
+    "name": "BreachSuppressor",
+    "requiredPowers": [
+      13440,
+      45184,
+      529536,
+      561280
+    ],
+    "id": 105
+  },
+  {
+    "name": "PowerNode6",
+    "requiredPowers": [
+      29824,
+      33280,
+      45184,
+      545920,
+      561280
+    ],
+    "id": 106
+  },
+  {
+    "name": "HealthNodeFragment17",
+    "requiredPowers": [
+      29824,
+      33280,
+      45184,
+      530048,
+      545920,
+      561280
+    ],
+    "id": 107
+  },
+  {
+    "name": "RedCoat",
+    "requiredPowers": [
+      29824,
+      32768,
+      33280,
+      45184,
+      530048,
+      545920
+    ],
+    "id": 108
+  },
+  {
+    "name": "IonBeam",
+    "requiredPowers": [
+      32768
+    ],
+    "id": 109
+  },
+  {
+    "name": "PowerNodeFragment10",
+    "requiredPowers": [
+      32768,
+      263172
+    ],
+    "id": 110
+  },
+  {
+    "name": "PowerNodeFragment18",
+    "requiredPowers": [
+      32768,
+      45184
+    ],
+    "id": 111
+  },
+  {
+    "name": "HealthNode8",
+    "requiredPowers": [
+      33312,
+      45184,
+      561280
+    ],
+    "id": 112
+  },
+  {
+    "name": "PowerNodeFragment11",
+    "requiredPowers": [
+      33312,
+      45184,
+      561280
+    ],
+    "id": 113
+  },
+  {
+    "name": "Note6",
+    "requiredPowers": [
+      33312,
+      45184,
+      561280
+    ],
+    "id": 114
+  },
+  {
+    "name": "PowerNodeFragment12",
+    "requiredPowers": [
+      33312,
+      45184,
+      561280
+    ],
+    "id": 115
+  },
+  {
+    "name": "SizeNode4",
+    "requiredPowers": [
+      33312,
+      45184,
+      561280
+    ],
+    "id": 116
+  },
+  {
+    "name": "Note26",
+    "requiredPowers": [
+      33312,
+      45184,
+      561280
+    ],
+    "id": 117
+  },
+  {
+    "name": "Scythe",
+    "requiredPowers": [
+      33312,
+      45184,
+      561280
+    ],
+    "id": 118
+  },
+  {
+    "name": "Note21",
+    "requiredPowers": [
+      33440,
+      45184,
+      561280
+    ],
+    "id": 119
+  },
+  {
+    "name": "Note11",
+    "requiredPowers": [
+      33280,
+      33312,
+      45184
+    ],
+    "id": 120
+  },
+  {
+    "name": "WallTrace",
+    "requiredPowers": [
+      69760,
+      98336,
+      98816
+    ],
+    "id": 121
+  },
+  {
+    "name": "PowerNodeFragment2",
+    "requiredPowers": [
+      128,
+      69760,
+      98336,
+      98816
+    ],
+    "id": 122
+  },
+  {
+    "name": "FlameThrower",
+    "requiredPowers": [
+      71552,
+      98816,
+      98848,
+      102528
+    ],
+    "id": 123
+  },
+  {
+    "name": "Swim",
+    "requiredPowers": [
+      70816,
+      78976,
+      98816,
+      98848,
+      102528,
+      110720
+    ],
+    "id": 124
+  },
+  {
+    "name": "HealthNodeFragment15",
+    "requiredPowers": [
+      772,
+      1284,
+      4480,
+      33028
+    ],
+    "id": 125
+  }
 ]

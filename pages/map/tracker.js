@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Header from 'components/Header';
-import { MainContainer, SecondaryContainer } from 'components/Containers';
 import TileMap from 'components/TileMap.js';
 import path from 'path';
-import DropdownMenu from 'components/DropdownMenu';
 
 // Simulated Power Flags
 export const Powers = {
@@ -44,16 +41,18 @@ export const Powers = {
   }
 };
 
-export default function Map() {
+const websocket_endpoint = "ws://localhost:19906";
+
+export default function Tracker() {
   const [data, setData] = useState([]);
   const [locationData, setLocationData] = useState([]);
   const [cPowers, setCPowers] = useState(Powers.None);
-  const [selectedPower, setSelectedPower] = useState(Powers.None);
   const [openLocations, setLocationOpen] = useState([]);
+  const [gameData, setGameData] = useState(null);
+  const [currentDiff, setDiff] = useState(null);
 
   useEffect(() => {
-    console.log("cPowers Updated: ", cPowers);
-    if (cPowers !== Powers.None) getOpenLocations();
+    if (locationData.length > 0) getOpenLocations();
   }, [cPowers]);
 
   useEffect(() => {
@@ -80,13 +79,13 @@ export default function Map() {
   };
 
   const loadPresetWorld = async () => {
-    const response = await fetch('maps/World.csv');
+    const response = await fetch('/maps/World.csv');
     if (!response.ok) {
       // handle error
       return;
     }
     const fileContent = await response.text();
-    const fileName = path.basename('maps/World.csv');
+    const fileName = path.basename('/maps/World.csv');
     const file = new File([fileContent], fileName);
     handlePresetFile(file);
   };
@@ -95,50 +94,46 @@ export default function Map() {
     loadPresetWorld();
   }, []);
 
+  const getDifficultyFile = () => {
+    if (gameData === null) return;
+    switch (gameData.Progression) {
+      case 1: return "/logic/locations_normal.json";
+      case 2: return "/logic/locations_hard.json";
+      default: return "/logic/locations_easy.json";
+    }
+  }
+
   useEffect(() => {
+    if (currentDiff === null) return;
     async function fetchData() {
-      const res = await fetch('logic/locations_hard.json');
+      const res = await fetch(getDifficultyFile());
       const jsonData = await res.json();
       setLocationData(jsonData);
     }
     fetchData();
-  }, []);
+  }, [currentDiff]);
 
-  const AddPower = (v) => {
-    if (Powers.hasPower(cPowers, v)) return;
-    var n = Powers.addPower(cPowers, v);
-    setCPowers(n);
-  };
+  useEffect(() => {
+    const socket = new WebSocket(websocket_endpoint);
+    socket.onopen = () => socket.send(`listen:videogameroulette`);
+    socket.onmessage = (event) => appendData(JSON.parse(event.data));
+  }, [])
 
-  const RemovePower = (v) => {
-    if (!Powers.hasPower(cPowers, v)) return;
-    var n = Powers.removePower(cPowers, v);
-    setCPowers(n);
-  };
-
-  const handlePowerClick = (powerValue) => {
-    setSelectedPower(powerValue);
-  };
-
-  const getPowersList = (cPowers) => {
-    const powersList = [];
-    for (const [key, value] of Object.entries(Powers)) {
-      if (key !== 'hasPower' && key !== 'addPower' && key !== 'removePower' && Powers.hasPower(cPowers, value)) {
-        powersList.push({ key, value });
-      }
-    }
-    return powersList;
-  };
-
-  const powersList = getPowersList(cPowers);
+  const appendData = (data) => {
+    if (data === null) return;
+    const { CurrentPowers, Progression } = data;
+    console.log("Websocket Data: ", data);
+    setGameData(data);
+    setDiff(Progression);
+    setCPowers(CurrentPowers);
+  }
 
   function getOpenLocations() {
     const availableLocations = [];
 
     locationData.forEach(location => {
       const powersMatch = location.requiredPowers.some(rp => {
-        const power = Object.values(Powers).find(value => value === rp);
-        return (cPowers & power) === power;
+        return (rp & cPowers) === rp;
       });
 
       if (powersMatch) {
@@ -158,33 +153,9 @@ export default function Map() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="absolute w-full h-full bg-gray-100 overflow-hidden">
-        <MainContainer>
-          <Header title="Axiom Verge Logic Tester" version="0.0.1" />
-          <SecondaryContainer>
-            {/* Left Container */}
-            <nav className="hidden xl:block bg-gray-900 text-white w-full h-full overflow-hidden flex flex-col p-2">
-              <DropdownMenu selectedPower={selectedPower} setSelectedPower={setSelectedPower} />
-              <div className="w-full flex p-2 gap-2 justify-center items-center">
-                <button className="w-full bg-gray-800 py-2 hover:bg-gray-700" onClick={() => AddPower(selectedPower)}>Add Power</button>
-                <button className="w-full bg-gray-800 py-2 hover:bg-gray-700" onClick={() => RemovePower(selectedPower)}>Remove Power</button>
-              </div>
-              <div className="w-full p-2">
-                <p>Powers:</p>
-                <ul>
-                  {powersList.map(power => (
-                    <li className="w-full flex bg-black p-2" key={power.key} onClick={() => handlePowerClick(power.value)}>
-                      {power.key}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </nav>
-            {/* Right Container */}
-            <main className="bg-black w-full h-full overflow-y-auto">
-              <TileMap data={data} openLocations={openLocations} />
-            </main>
-          </SecondaryContainer>
-        </MainContainer>
+        <main className="bg-black w-full h-full overflow-auto flex justify-start items-start">
+          <TileMap data={data} openLocations={openLocations} />
+        </main>
       </div>
     </>
   )
