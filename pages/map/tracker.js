@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import Head from 'next/head';
 import TileMap from 'components/TileMap.js';
+import Head from 'next/head';
 import path from 'path';
+import { useState, useEffect } from 'react';
 
 // Simulated Power Flags
 export const Powers = {
@@ -38,10 +38,10 @@ export const Powers = {
 
   removePower(powers, power) {
     return powers & ~power;
-  }
+  },
 };
 
-const websocket_endpoint = "ws://localhost:19906";
+const websocket_endpoint = 'ws://localhost:19906';
 
 export default function Tracker() {
   const [data, setData] = useState([]);
@@ -51,28 +51,39 @@ export default function Tracker() {
   const [gameData, setGameData] = useState(null);
   const [currentDiff, setDiff] = useState(null);
 
+  const getOpenLocations = () => {
+    const availableLocations = [];
+
+    locationData.forEach(location => {
+      const powersMatch = location.requiredPowers.some(rp => {
+        return (rp & cPowers) === rp;
+      });
+
+      if (powersMatch) {
+        availableLocations.push(location.id);
+      }
+    });
+
+    setLocationOpen(availableLocations);
+  };
+
   useEffect(() => {
     if (locationData.length > 0) getOpenLocations();
-  }, [cPowers]);
+  }, [cPowers, locationData]);
 
   useEffect(() => {
-    console.log("locationData Updated: ", locationData);
-    getOpenLocations();
-  }, [locationData]);
-
-  useEffect(() => {
-    console.log("openLocations Updated: ", openLocations);
+    console.log('openLocations Updated: ', openLocations);
   }, [openLocations]);
 
-  const handlePresetFile = (file) => {
+  const handlePresetFile = file => {
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = () => {
       const parsedData = reader.result
-        .split("\n")
-        .filter((row) => row.trim() !== "") // ignore empty lines
-        .map((row) => {
-          return row.split(",").map((cell) => parseInt(cell));
+        .split('\n')
+        .filter(row => row.trim() !== '') // ignore empty lines
+        .map(row => {
+          return row.split(',').map(cell => parseInt(cell));
         });
       setData(parsedData);
     };
@@ -97,11 +108,14 @@ export default function Tracker() {
   const getDifficultyFile = () => {
     if (gameData === null) return;
     switch (gameData.Progression) {
-      case 1: return "/logic/locations_normal.json";
-      case 2: return "/logic/locations_hard.json";
-      default: return "/logic/locations_easy.json";
+      case 1:
+        return '/logic/locations_normal.json';
+      case 2:
+        return '/logic/locations_hard.json';
+      default:
+        return '/logic/locations_easy.json';
     }
-  }
+  };
 
   useEffect(() => {
     if (currentDiff === null) return;
@@ -116,33 +130,17 @@ export default function Tracker() {
   useEffect(() => {
     const socket = new WebSocket(websocket_endpoint);
     socket.onopen = () => socket.send(`listen:videogameroulette`);
-    socket.onmessage = (event) => appendData(JSON.parse(event.data));
-  }, [])
+    socket.onmessage = event => appendData(JSON.parse(event.data));
+  }, []);
 
-  const appendData = (data) => {
+  const appendData = data => {
     if (data === null) return;
     const { CurrentPowers, Progression } = data;
-    console.log("Websocket Data: ", data);
+    console.log('Websocket Data: ', data);
     setGameData(data);
     setDiff(Progression);
     setCPowers(CurrentPowers);
-  }
-
-  function getOpenLocations() {
-    const availableLocations = [];
-
-    locationData.forEach(location => {
-      const powersMatch = location.requiredPowers.some(rp => {
-        return (rp & cPowers) === rp;
-      });
-
-      if (powersMatch) {
-        availableLocations.push(location.id);
-      }
-    });
-
-    setLocationOpen(availableLocations);
-  }
+  };
 
   return (
     <>
@@ -158,5 +156,5 @@ export default function Tracker() {
         </main>
       </div>
     </>
-  )
+  );
 }

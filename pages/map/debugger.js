@@ -51,15 +51,25 @@ export default function Debugger() {
   const [selectedPower, setSelectedPower] = useState(Powers.None);
   const [openLocations, setLocationOpen] = useState([]);
 
-  useEffect(() => {
-    console.log("cPowers Updated: ", cPowers);
-    if (cPowers !== Powers.None) getOpenLocations();
-  }, [cPowers]);
+  const getOpenLocations = () => {
+    const availableLocations = [];
+
+    locationData.forEach(location => {
+      const powersMatch = location.requiredPowers.some(rp => {
+        return (rp & cPowers) === rp;
+      });
+
+      if (powersMatch) {
+        availableLocations.push(location.id);
+      }
+    });
+
+    setLocationOpen(availableLocations);
+  };
 
   useEffect(() => {
-    console.log("locationData Updated: ", locationData);
-    getOpenLocations();
-  }, [locationData]);
+    if (locationData.length > 0) getOpenLocations();
+  }, [cPowers, locationData]);
 
   useEffect(() => {
     console.log("openLocations Updated: ", openLocations);
@@ -131,13 +141,6 @@ export default function Debugger() {
   };
 
   const powersList = getPowersList(cPowers);
-
-  function getOpenLocations() {
-    const availableLocations = locationData.filter(location =>
-      location.requiredPowers.some(locationPowers => locationPowers === 0 || (locationPowers & cPowers)),
-    );
-    setLocationOpen(availableLocations);
-  }
 
   return (
     <>
