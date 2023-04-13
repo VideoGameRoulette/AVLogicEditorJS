@@ -186,10 +186,11 @@ export default function Home() {
               {/* Location List */}
               <ul role="list" className="h-[55rem] flex flex-col gap-2 overflow-y-auto scrollbar-hide">
                 {locations?.map((location) => (
-                  <li key={location.name} className={classNames(location.name === current?.name ? "bg-sky-500 text-black" : "bg-gray-800 hover:bg-gray-700 text-gray-200", "flex p-4 cursor-pointer")} onClick={() => handleItemClick(location)}>
+                  <li key={location.name} className={classNames(location.name === current?.name ? "bg-sky-500 text-black" : "bg-gray-800 hover:bg-gray-700 text-gray-200", "flex items-center p-4 cursor-pointer")} onClick={() => handleItemClick(location)}>
                     <img className="h-10 w-10 rounded-full" src={`imgs/${getItemNameForImage(location.name)}.svg`} alt="" />
                     <div className="ml-3">
                       <p className="text-sm font-medium">{location.name}</p>
+                      {Boolean(location.area) && (<p className="text-sm font-medium">{location.area}</p>)}
                       <p className="text-sm">{location.id}</p>
                     </div>
                   </li>
