@@ -19,6 +19,7 @@ export default function Home() {
               <HeaderButton title="Items" url="/items" active={false} />
               <HeaderButton title="Locations" url="/locations" active={false} />
               <HeaderButton title="Tracker" url="/map/tracker" active={false} />
+              <HeaderButton title="Spoilers" url="/map/spoilers" active={false} />
               <HeaderButton title="Debugger" url="/map/debugger" active={false} />
             </div>
           </Header>
