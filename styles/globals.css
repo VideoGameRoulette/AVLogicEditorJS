@@ -115,3 +115,45 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Define custom CSS rules */
+.calc-148 {
+  left: calc(100% - 128px - 20px);
+}
+  
+.calc-168 {
+  width: calc(100% - 128px - 40px)
+}
+
+.calc-20 {
+  height: calc(100% - 20px);
+}
+
+.frame {
+  border-image: url(/imgs/Frame.svg) 10 round;
+}
+
+.inner {
+ border-image: url(/imgs/FrameInner.svg) 10 round;
+}
+  
+/* Use TailwindCSS to apply custom CSS rules */
+.border-frame {
+  @apply frame;
+}
+
+.border-inner {
+  @apply inner;
+}
+
+.left-calc-148 {
+  @apply calc-148;
+}
+
+.w-calc-168 {
+  @apply calc-148;
+}
+
+.h-calc-20 {
+  @apply calc-20;
+}

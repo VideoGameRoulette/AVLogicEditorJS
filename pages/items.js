@@ -147,6 +147,7 @@ export default function Home() {
               <HeaderButton title="Tracker" url="/map/tracker" active={false} />
               <HeaderButton title="Spoilers" url="/map/spoilers" active={false} />
               <HeaderButton title="Debugger" url="/map/debugger" active={false} />
+              <HeaderButton title="Item Tracker" url="/widgets/items" active={false} />
             </div>
           </Header>
           <SecondaryContainer>

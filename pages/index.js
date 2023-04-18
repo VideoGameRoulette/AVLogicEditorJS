@@ -21,6 +21,7 @@ export default function Home() {
               <HeaderButton title="Tracker" url="/map/tracker" active={false} />
               <HeaderButton title="Spoilers" url="/map/spoilers" active={false} />
               <HeaderButton title="Debugger" url="/map/debugger" active={false} />
+              <HeaderButton title="Item Tracker" url="/widgets/items" active={false} />
             </div>
           </Header>
           <div className="bg-gray-900 w-full h-full flex flex-col justify-center items-center text-gray-200 font-bold">

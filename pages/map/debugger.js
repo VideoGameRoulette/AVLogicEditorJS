@@ -126,6 +126,7 @@ export default function Debugger() {
               <HeaderButton title="Tracker" url="/map/tracker" active={false} />
               <HeaderButton title="Spoilers" url="/map/spoilers" active={false} />
               <HeaderButton title="Debugger" url="/map/debugger" active={true} />
+              <HeaderButton title="Item Tracker" url="/widgets/items" active={false} />
             </div>
           </Header>
           <SecondaryContainer>
