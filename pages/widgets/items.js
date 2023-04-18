@@ -8,25 +8,35 @@ const websocket_endpoint = 'ws://localhost:19906';
 
 const ItemTracker = () => {
     const [data, setData] = useState(null);
+    const [connected, setConnected] = useState(false);
+
+    const handleConnect = () => {
+        const socket = new WebSocket(websocket_endpoint);
+        socket.onopen = () => {
+            setConnected(true);
+        };
+        socket.onclose = () => {
+            setConnected(false);
+        };
+        socket.onmessage = event => appendData(JSON.parse(event.data));
+    }
 
     useEffect(() => {
-        const socket = new WebSocket(websocket_endpoint);
-        socket.onopen = () => socket.send(`listen:videogameroulette`);
-        socket.onmessage = event => appendData(JSON.parse(event.data));
+        handleConnect();
     }, []);
 
     const appendData = d => {
         if (d === null) return;
         setData(d);
-        console.log("Websocket Data: ", d);
+        if (process.env.NODE_ENV !== 'production') console.log("Websocket Data: ", d);
     };
 
-    if (data === null) return <ErrorPage />;
+    if (data === null) return <ErrorPage connected={connected} callback={handleConnect} />;
 
     const { Items, HealthNodes, HealthNodeFragments, PowerNodes, PowerNodesFragments, SizeNodes, RangeNodes } = data;
 
-    const filteredWeapons = Items?.filter(item => item.mType === 11);
-    const filteredTools = Items?.filter(item => item.mType === 10 || item.mType === 5);
+    const filteredWeapons = Items !== null ? Items?.filter(item => item.mType === 11) : [];
+    const filteredTools = Items !== null ? Items?.filter(item => item.mType === 10 || item.mType === 5) : [];
 
     function getItemByValue(value) {
         const room = RoomTypesS.find(room => room.name === value);
