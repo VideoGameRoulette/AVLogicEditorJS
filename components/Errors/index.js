@@ -3,7 +3,7 @@ export const ErrorPage = () => {
         <>
             <main className="relative w-full h-[100vh] isolate min-h-full">
                 <img
-                    src="https://images.unsplash.com/photo-1545972154-9bb223aac798?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3050&q=80&exp=8&con=-15&sat=-75"
+                    src="https://cdn.weasyl.com/~zummeng/submissions/1866803/7a389874774d5b90adb63ba31255634362542a645097f6e3aec6a700308213a5/zummeng-axiom-verge-4k-wallpaper.png"
                     alt=""
                     className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
                 />
