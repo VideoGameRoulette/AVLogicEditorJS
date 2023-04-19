@@ -110,7 +110,7 @@ export default function Debugger() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch('/AVLogicEditorJS/logic/locations_hard.json');
+      const res = await fetch('/logic/locations_hard.json');
       const jsonData = await res.json();
       setLocationData(jsonData);
     }
