@@ -1,8 +1,6 @@
+import { useState, useEffect, useCallback } from "react";
 import Head from 'next/head';
-import { useState, useEffect } from "react";
-import { RoomTypesS } from "components/RoomTypesS";
-import { classNames } from "utils";
-import { ErrorPage } from "components/Errors";
+import ErrorPage from "components/Errors";
 
 const websocket_endpoint = 'ws://localhost:19906';
 
@@ -10,7 +8,13 @@ const StatTracker = () => {
     const [data, setData] = useState(null);
     const [connected, setConnected] = useState(false);
 
-    const handleConnect = () => {
+    const handleConnect = useCallback(() => {
+        const appendData = d => {
+            if (d === null) return;
+            setData(d);
+            if (process.env.NODE_ENV !== 'production') console.log("Websocket Data: ", d);
+        };
+
         const socket = new WebSocket(websocket_endpoint);
         socket.onopen = () => {
             setConnected(true);
@@ -19,17 +23,11 @@ const StatTracker = () => {
             setConnected(false);
         };
         socket.onmessage = event => appendData(JSON.parse(event.data));
-    }
+    }, [setConnected, setData]);
 
     useEffect(() => {
         handleConnect();
-    }, []);
-
-    const appendData = d => {
-        if (d === null) return;
-        setData(d);
-        if (process.env.NODE_ENV !== 'production') console.log("Websocket Data: ", d);
-    };
+    }, [handleConnect]);
 
     if (data === null) return <ErrorPage connected={connected} callback={handleConnect} />;
 

@@ -1,4 +1,4 @@
-export const ErrorPage = ({ connected, callback }) => {
+const ErrorPage = ({ connected, callback }) => {
     return (
         <>
             <main className="relative w-full h-[100vh] isolate min-h-full">
@@ -15,3 +15,5 @@ export const ErrorPage = ({ connected, callback }) => {
         </>
     )
 }
+
+export default ErrorPage;

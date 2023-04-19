@@ -1,9 +1,9 @@
-import TileMap from 'components/TileMap.js';
+import { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import path from 'path';
-import { useState, useEffect } from 'react';
+import TileMap from 'components/TileMap.js';
 import Powers from 'components/Powers';
-import { ErrorPage } from "components/Errors";
+import ErrorPage from "components/Errors";
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -18,18 +18,7 @@ export default function Tracker() {
   const [currentDiff, setDiff] = useState(null);
   const [connected, setConnected] = useState(false);
 
-  const handleConnect = () => {
-    const socket = new WebSocket(websocket_endpoint);
-    socket.onopen = () => {
-      setConnected(true);
-    };
-    socket.onclose = () => {
-      setConnected(false);
-    };
-    socket.onmessage = event => appendData(JSON.parse(event.data));
-  }
-
-  const getOpenLocations = () => {
+  const getOpenLocations = useCallback(() => {
     const availableLocations = [];
 
     locationData.forEach(location => {
@@ -43,31 +32,32 @@ export default function Tracker() {
     });
 
     setLocationOpen(availableLocations);
-  };
+  }, [cPowers, locationData]);
 
   useEffect(() => {
     if (locationData.length > 0) getOpenLocations();
-  }, [cPowers, locationData]);
+  }, [cPowers, locationData, getOpenLocations]);
+
 
   useEffect(() => {
     console.log('openLocations Updated: ', openLocations);
   }, [openLocations]);
 
-  const handlePresetFile = file => {
+  const handlePresetFile = useCallback((file) => {
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = () => {
       const parsedData = reader.result
-        .split('\n')
-        .filter(row => row.trim() !== '') // ignore empty lines
-        .map(row => {
-          return row.split(',').map(cell => parseInt(cell));
+        .split("\n")
+        .filter((row) => row.trim() !== "") // ignore empty lines
+        .map((row) => {
+          return row.split(",").map((cell) => parseInt(cell));
         });
       setData(parsedData);
     };
-  };
+  }, [setData]);
 
-  const loadPresetWorld = async () => {
+  const loadPresetWorld = useCallback(async () => {
     let u = isDev ? '/maps/World.csv' : '/AVLogicEditorJS/maps/World.csv';
     const response = await fetch(u);
     if (!response.ok) {
@@ -78,25 +68,25 @@ export default function Tracker() {
     const fileName = path.basename(u);
     const file = new File([fileContent], fileName);
     handlePresetFile(file);
-  };
+  }, [handlePresetFile]);
 
   useEffect(() => {
     loadPresetWorld();
-  }, []);
-
-  const getDifficultyFile = () => {
-    if (gameData === null) return;
-    switch (gameData.Progression) {
-      case 1:
-        return isDev ? '/logic/locations_normal.json' : '/AVLogicEditorJS/logic/locations_normal.json';
-      case 2:
-        return isDev ? '/logic/locations_hard.json' : '/AVLogicEditorJS/logic/locations_hard.json';
-      default:
-        return isDev ? '/logic/locations_easy.json' : '/AVLogicEditorJS/logic/locations_easy.json';
-    }
-  };
+  }, [loadPresetWorld]);
 
   useEffect(() => {
+    const getDifficultyFile = () => {
+      if (gameData === null) return;
+      switch (gameData.Progression) {
+        case 1:
+          return isDev ? '/logic/locations_normal.json' : '/AVLogicEditorJS/logic/locations_normal.json';
+        case 2:
+          return isDev ? '/logic/locations_hard.json' : '/AVLogicEditorJS/logic/locations_hard.json';
+        default:
+          return isDev ? '/logic/locations_easy.json' : '/AVLogicEditorJS/logic/locations_easy.json';
+      }
+    };
+
     if (currentDiff === null) return;
     async function fetchData() {
       const res = await fetch(getDifficultyFile());
@@ -104,20 +94,31 @@ export default function Tracker() {
       setLocationData(jsonData);
     }
     fetchData();
-  }, [currentDiff]);
+  }, [currentDiff, gameData]);
+
+  const handleConnect = useCallback(() => {
+    const appendData = data => {
+      if (data === null) return;
+      const { CurrentPowers, Progression } = data;
+      console.log('Websocket Data: ', data);
+      setGameData(data);
+      setDiff(Progression);
+      setCPowers(CurrentPowers);
+    };
+
+    const socket = new WebSocket(websocket_endpoint);
+    socket.onopen = () => {
+      setConnected(true);
+    };
+    socket.onclose = () => {
+      setConnected(false);
+    };
+    socket.onmessage = event => appendData(JSON.parse(event.data));
+  }, [setConnected, setGameData, setDiff, setCPowers]);
 
   useEffect(() => {
     handleConnect();
-  }, []);
-
-  const appendData = data => {
-    if (data === null) return;
-    const { CurrentPowers, Progression } = data;
-    console.log('Websocket Data: ', data);
-    setGameData(data);
-    setDiff(Progression);
-    setCPowers(CurrentPowers);
-  };
+  }, [handleConnect]);
 
   if (gameData === null) return <ErrorPage connected={connected} callback={handleConnect} />;
 

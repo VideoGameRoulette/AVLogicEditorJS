@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
-import HeaderButton from 'components/HeaderButton';
-import { Dialog, Disclosure } from '@headlessui/react';
 import { ChevronDownIcon, XMarkIcon, Bars3Icon } from '@heroicons/react/20/solid';
+import { Dialog, Disclosure } from '@headlessui/react';
+import HeaderButton from 'components/HeaderButton';
 import { classNames } from 'utils';
 
 const Header = ({ links }) => {
@@ -12,14 +12,16 @@ const Header = ({ links }) => {
             <div className="h-full flex justify-start items-center gap-4">
                 <Link href="/" passHref legacyBehavior>
                     <a className="relative z-50">
-                        <img className="w-8 h-8" src="/imgs/icon.bmp" alt="Axiom Verge Logo" />
+                        <div className="w-8 h-8 rounded-md overflow-hidden">
+                            <div className="bg-icon bg-contain bg-center w-full h-full" title="Axiom Verge Icon" />
+                        </div>
                     </a>
                 </Link>
                 <div className="hidden lg:block bg-gray-900 text-gray-200 rounded-md px-3 py-1 font-semibold">v 1.65.5.71</div>
             </div>
             <div className="hidden md:-my-px md:ml-6 md:flex md:space-x-6">
-                {links.map(l => (
-                    <HeaderButton title={l.name} url={l.href} active={l.active} />
+                {links.map((l, idx) => (
+                    <HeaderButton key={`header${idx}`} title={l.name} url={l.href} active={l.active} />
                 ))}
             </div>
             <div className="flex md:hidden">

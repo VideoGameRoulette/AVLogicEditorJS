@@ -1,8 +1,8 @@
-import SpoilerMap from 'components/SpoilerMap.js';
+import { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import path from 'path';
-import { useState, useEffect } from 'react';
-import { ErrorPage } from "components/Errors";
+import SpoilerMap from 'components/SpoilerMap.js';
+import ErrorPage from "components/Errors";
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -14,32 +14,21 @@ export default function Spoilers() {
   const [randomItems, setRandomItems] = useState(null);
   const [connected, setConnected] = useState(false);
 
-  const handleConnect = () => {
-    const socket = new WebSocket(websocket_endpoint);
-    socket.onopen = () => {
-      setConnected(true);
-    };
-    socket.onclose = () => {
-      setConnected(false);
-    };
-    socket.onmessage = event => appendData(JSON.parse(event.data));
-  }
-
-  const handlePresetFile = file => {
+  const handlePresetFile = useCallback((file) => {
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = () => {
       const parsedData = reader.result
-        .split('\n')
-        .filter(row => row.trim() !== '') // ignore empty lines
-        .map(row => {
-          return row.split(',').map(cell => parseInt(cell));
+        .split("\n")
+        .filter((row) => row.trim() !== "") // ignore empty lines
+        .map((row) => {
+          return row.split(",").map((cell) => parseInt(cell));
         });
       setData(parsedData);
     };
-  };
+  }, [setData]);
 
-  const loadPresetWorld = async () => {
+  const loadPresetWorld = useCallback(async () => {
     let u = isDev ? '/maps/World.csv' : '/AVLogicEditorJS/maps/World.csv';
     const response = await fetch(u);
     if (!response.ok) {
@@ -50,22 +39,33 @@ export default function Spoilers() {
     const fileName = path.basename(u);
     const file = new File([fileContent], fileName);
     handlePresetFile(file);
-  };
+  }, [handlePresetFile]);
 
   useEffect(() => {
     loadPresetWorld();
-  }, []);
+  }, [loadPresetWorld]);
+
+  const handleConnect = useCallback(() => {
+    const appendData = data => {
+      if (data === null) return;
+      const { Items, RandomItems } = data;
+      setItems(Items);
+      setRandomItems(RandomItems);
+    };
+
+    const socket = new WebSocket(websocket_endpoint);
+    socket.onopen = () => {
+      setConnected(true);
+    };
+    socket.onclose = () => {
+      setConnected(false);
+    };
+    socket.onmessage = event => appendData(JSON.parse(event.data));
+  }, [setConnected, setItems, setRandomItems]);
 
   useEffect(() => {
     handleConnect();
-  }, []);
-
-  const appendData = data => {
-    if (data === null) return;
-    const { Items, RandomItems } = data;
-    setItems(Items);
-    setRandomItems(RandomItems);
-  };
+  }, [handleConnect]);
 
   if (items === null) return <ErrorPage connected={connected} callback={handleConnect} />;
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Transition } from '@headlessui/react';
 import { MagnifyingGlassIcon, ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
+import { classNames } from '@/utils';
 
 export const ItemComboBox = ({ options, callback, imageCB, stringCB }) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -57,7 +58,9 @@ export const ItemComboBox = ({ options, callback, imageCB, stringCB }) => {
                                 callback(option)
                             }}
                         >
-                            <img className="h-8 w-8 rounded-full" src={`imgs/${imageCB(option.name)}.svg`} alt="" />
+                            <div className="h-8 w-8 rounded-full">
+                                <div className={imageCB(option.name)} />
+                            </div>
                             <div className="ml-3">
                                 <p className="text-xs font-medium">{option.name}</p>
                                 <p className="text-sm">{stringCB(option.powers)}</p>
@@ -125,7 +128,9 @@ export const LocationComboBox = ({ options, callback, imageCB }) => {
                                 callback(option)
                             }}
                         >
-                            <img className="h-8 w-8 rounded-full" src={`imgs/${imageCB(option.name)}.svg`} alt="" />
+                            <div className="h-8 w-8 rounded-full">
+                                <div className={imageCB(option.name)} />
+                            </div>
                             <div className="ml-3">
                                 {Boolean(option.area) && (<p className="text-xs font-bold">{option.area}</p>)}
                                 <p className="text-xs font-medium">{option.name}</p>

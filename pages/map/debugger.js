@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
-import Header from 'components/Header';
-import { MainContainer, SecondaryContainer } from 'components/Containers';
-import TileMap from 'components/TileMap.js';
 import path from 'path';
+import Header from 'components/Header';
+import TileMap from 'components/TileMap.js';
 import DropdownMenu from 'components/DropdownMenu';
-import HeaderButton from 'components/HeaderButton';
 import Powers from 'components/Powers';
+import { MainContainer, SecondaryContainer } from 'components/Containers';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -55,7 +54,7 @@ export default function Debugger() {
   const [selectedPower, setSelectedPower] = useState(Powers.None);
   const [openLocations, setLocationOpen] = useState([]);
 
-  const getOpenLocations = () => {
+  const getOpenLocations = useCallback(() => {
     const availableLocations = [];
 
     locationData.forEach(location => {
@@ -69,17 +68,18 @@ export default function Debugger() {
     });
 
     setLocationOpen(availableLocations);
-  };
+  }, [cPowers, locationData]);
 
   useEffect(() => {
     if (locationData.length > 0) getOpenLocations();
-  }, [cPowers, locationData]);
+  }, [cPowers, locationData, getOpenLocations]);
+
 
   useEffect(() => {
     console.log("openLocations Updated: ", openLocations);
   }, [openLocations]);
 
-  const handlePresetFile = (file) => {
+  const handlePresetFile = useCallback((file) => {
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = () => {
@@ -91,9 +91,9 @@ export default function Debugger() {
         });
       setData(parsedData);
     };
-  };
+  }, [setData]);
 
-  const loadPresetWorld = async () => {
+  const loadPresetWorld = useCallback(async () => {
     let u = isDev ? '/maps/World.csv' : '/AVLogicEditorJS/maps/World.csv';
     const response = await fetch(u);
     if (!response.ok) {
@@ -104,11 +104,11 @@ export default function Debugger() {
     const fileName = path.basename(u);
     const file = new File([fileContent], fileName);
     handlePresetFile(file);
-  };
+  }, [handlePresetFile]);
 
   useEffect(() => {
     loadPresetWorld();
-  }, []);
+  }, [loadPresetWorld]);
 
   useEffect(() => {
     async function fetchData() {

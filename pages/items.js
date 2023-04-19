@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Header from 'components/Header';
-import { MainContainer, SecondaryContainer } from 'components/Containers';
-import { classNames } from 'utils';
-import HeaderButton from 'components/HeaderButton';
 import Powers from 'components/Powers';
+import { MainContainer, SecondaryContainer } from 'components/Containers';
 import { ItemComboBox } from 'components/ComboBox';
+import { RoomTypesS } from "components/RoomTypesS";
+import { classNames } from 'utils';
 
 const links = [
   {
@@ -50,15 +50,23 @@ export default function Home() {
   const [current, setCurrent] = useState(null);
   const [powers, setPowers] = useState(null);
 
+  const itemsRef = useRef(items);
+
   useEffect(() => {
     if (current === null) return;
-    const newData2 = items;
+
+    const newData2 = [...itemsRef.current]; // Use the current value of itemsRef
 
     newData2.map((item, idx) => {
-      if (item.name === current.name)
+      if (item.name === current.name) {
         newData2[idx] = current;
+      }
     });
-    setItems(newData2);
+
+    if (JSON.stringify(newData2) !== JSON.stringify(itemsRef.current)) { // Compare new value with previous value
+      setItems(newData2);
+      itemsRef.current = newData2; // Update the reference to the new value
+    }
   }, [current]);
 
   // Handle for saving json file
@@ -150,22 +158,9 @@ export default function Home() {
     return flagStrings;
   }
 
-  function getItemNameForImage(mName) {
-    if (mName.includes("HealthNode")) {
-      if (mName.endsWith("Fragment")) return "HealthNodeFragment";
-      return "HealthNode";
-    }
-    if (mName.includes("PowerNode")) {
-      if (mName.endsWith("Fragment")) return "PowerNodeFragment";
-      return "PowerNode";
-    }
-    if (mName.includes("SizeNode"))
-      return "SizeNode";
-    if (mName.includes("RangeNode"))
-      return "RangeNode";
-    if (mName.includes("Note"))
-      return "Note";
-    return mName;
+  function getItemByValue(value) {
+    const room = RoomTypesS.find(room => room.name === value);
+    return room.item ? room.item : "";
   }
 
   return (
@@ -199,7 +194,7 @@ export default function Home() {
                 </button>
               </div>
               {/* Location List */}
-              <ItemComboBox options={items} callback={handleItemClick} imageCB={getItemNameForImage} stringCB={getFlagStrings} />
+              <ItemComboBox options={items} callback={handleItemClick} imageCB={getItemByValue} stringCB={getFlagStrings} />
             </div>
             {/* Right Container */}
             <main className="bg-gray-800 w-full h-full overflow-y-auto grid-rows-[4rem_1fr]">

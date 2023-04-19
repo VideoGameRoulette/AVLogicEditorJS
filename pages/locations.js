@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
-import Header from 'components/Header';
-import { MainContainer, SecondaryContainer } from 'components/Containers';
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
-import { classNames } from 'utils';
-import HeaderButton from 'components/HeaderButton';
+import Header from 'components/Header';
 import Powers from 'components/Powers';
+import { MainContainer, SecondaryContainer } from 'components/Containers';
 import { LocationComboBox } from 'components/ComboBox';
+import { RoomTypesS } from "components/RoomTypesS";
+import { classNames } from 'utils';
 
 const links = [
   {
@@ -52,15 +52,23 @@ export default function Home() {
   const [pIndex, setPIndex] = useState(null);
   const [powers, setPowers] = useState(null);
 
+  const locationsRef = useRef(locations);
+
   useEffect(() => {
     if (current === null) return;
-    const newData2 = locations;
+
+    const newData2 = [...locationsRef.current]; // Use the current value of locationsRef
 
     newData2.map((location, idx) => {
-      if (location.id === current.id)
+      if (location.id === current.id) {
         newData2[idx] = current;
+      }
     });
-    setLocations(newData2);
+
+    if (JSON.stringify(newData2) !== JSON.stringify(locationsRef.current)) { // Compare new value with previous value
+      setLocations(newData2);
+      locationsRef.current = newData2; // Update the reference to the new value
+    }
   }, [current]);
 
   // Handle for saving json file
@@ -154,22 +162,9 @@ export default function Home() {
     return flagStrings;
   }
 
-  function getItemNameForImage(mName) {
-    if (mName.includes("HealthNode")) {
-      if (mName.endsWith("Fragment")) return "HealthNodeFragment";
-      return "HealthNode";
-    }
-    if (mName.includes("PowerNode")) {
-      if (mName.endsWith("Fragment")) return "PowerNodeFragment";
-      return "PowerNode";
-    }
-    if (mName.includes("SizeNode"))
-      return "SizeNode";
-    if (mName.includes("RangeNode"))
-      return "RangeNode";
-    if (mName.includes("Note"))
-      return "Note";
-    return mName;
+  function getItemByValue(value) {
+    const room = RoomTypesS.find(room => room.name === value);
+    return room.item ? room.item : "";
   }
 
   const handlePowerAdd = () => {
@@ -220,7 +215,7 @@ export default function Home() {
                 </button>
               </div>
               {/* Location List */}
-              <LocationComboBox options={locations} callback={handleItemClick} imageCB={getItemNameForImage} />
+              <LocationComboBox options={locations} callback={handleItemClick} imageCB={getItemByValue} />
             </nav>
             {/* Right Container */}
             <main className="bg-gray-800 w-full h-full overflow-y-auto grid-rows-[4rem_1fr]">
