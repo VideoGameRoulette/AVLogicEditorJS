@@ -5,8 +5,6 @@ import TileMap from 'components/TileMap.js';
 import Powers from 'components/Powers';
 import ErrorPage from "components/Errors";
 
-const isDev = process.env.NODE_ENV !== 'production';
-
 const websocket_endpoint = 'ws://localhost:19906';
 
 export default function Tracker() {
@@ -58,7 +56,7 @@ export default function Tracker() {
   }, [setData]);
 
   const loadPresetWorld = useCallback(async () => {
-    let u = isDev ? '/maps/World.csv' : '/AVLogicEditorJS/maps/World.csv';
+    let u = '/maps/World.csv';
     const response = await fetch(u);
     if (!response.ok) {
       // handle error
@@ -79,11 +77,11 @@ export default function Tracker() {
       if (gameData === null) return;
       switch (gameData.Progression) {
         case 1:
-          return isDev ? '/logic/locations_normal.json' : '/AVLogicEditorJS/logic/locations_normal.json';
+          return '/logic/locations_normal.json';
         case 2:
-          return isDev ? '/logic/locations_hard.json' : '/AVLogicEditorJS/logic/locations_hard.json';
+          return '/logic/locations_hard.json';
         default:
-          return isDev ? '/logic/locations_easy.json' : '/AVLogicEditorJS/logic/locations_easy.json';
+          return '/logic/locations_easy.json';
       }
     };
 

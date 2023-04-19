@@ -7,8 +7,6 @@ import DropdownMenu from 'components/DropdownMenu';
 import Powers from 'components/Powers';
 import { MainContainer, SecondaryContainer } from 'components/Containers';
 
-const isDev = process.env.NODE_ENV !== 'production';
-
 const links = [
   {
     name: 'Items',
@@ -94,7 +92,7 @@ export default function Debugger() {
   }, [setData]);
 
   const loadPresetWorld = useCallback(async () => {
-    let u = isDev ? '/maps/World.csv' : '/AVLogicEditorJS/maps/World.csv';
+    let u = '/maps/World.csv';
     const response = await fetch(u);
     if (!response.ok) {
       // handle error

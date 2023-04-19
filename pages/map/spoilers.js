@@ -4,8 +4,6 @@ import path from 'path';
 import SpoilerMap from 'components/SpoilerMap.js';
 import ErrorPage from "components/Errors";
 
-const isDev = process.env.NODE_ENV !== 'production';
-
 const websocket_endpoint = 'ws://localhost:19906';
 
 export default function Spoilers() {
@@ -29,7 +27,7 @@ export default function Spoilers() {
   }, [setData]);
 
   const loadPresetWorld = useCallback(async () => {
-    let u = isDev ? '/maps/World.csv' : '/AVLogicEditorJS/maps/World.csv';
+    let u = '/maps/World.csv';
     const response = await fetch(u);
     if (!response.ok) {
       // handle error
