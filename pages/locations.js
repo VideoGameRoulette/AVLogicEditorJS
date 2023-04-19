@@ -234,7 +234,7 @@ export default function Home() {
             <main className="bg-gray-800 w-full h-full overflow-y-auto grid-rows-[4rem_1fr]">
               {/* Header Title and Add / Remove Buttons */}
               <div className="w-full h-16 flex justify-between items-center bg-gray-700">
-                <h1 className="font-bold text-xl text-gray-200 p-4">{current?.name}</h1>
+                <h1 className="font-bold text-xl text-gray-200 p-4">{current?.name} : {current?.id}</h1>
                 <div className="flex items-center justify-end pr-4">
                   <button
                     className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-l flex items-center"
