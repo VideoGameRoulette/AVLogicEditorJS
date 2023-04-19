@@ -53,6 +53,10 @@ export default function Home() {
   const itemsRef = useRef(items);
 
   useEffect(() => {
+    itemsRef.current = items;
+  }, [items]);
+
+  useEffect(() => {
     if (current === null) return;
 
     const newData2 = [...itemsRef.current]; // Use the current value of itemsRef
@@ -221,7 +225,7 @@ export default function Home() {
                       {powers?.map(({ power, value, checked }) => (
                         <div key={`p${value}`}>
                           <label>
-                            <input className="mr-2" type="checkbox" name={power} value={value} checked={checked} onClick={() => handlePowerClick(value)} />
+                            <input className="mr-2" type="checkbox" name={power} value={value} checked={checked} onChange={() => handlePowerClick(value)} />
                             {power}
                           </label>
                         </div>

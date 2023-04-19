@@ -50,7 +50,7 @@ export const ItemComboBox = ({ options, callback, imageCB, stringCB }) => {
                 <div className="absolute h-auto max-h-96 z-10 w-full mt-1 bg-white rounded-md shadow-lg dark:bg-gray-800 overflow-y-auto scrollbar-hide">
                     {filteredOptions !== undefined && filteredOptions.map((option) => (
                         <div
-                            key={option.id}
+                            key={option.name}
                             className="flex items-center px-4 py-2 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 rounded-md cursor-pointer"
                             onClick={() => {
                                 setSearchText("")

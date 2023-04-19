@@ -52,7 +52,11 @@ export default function Home() {
   const [pIndex, setPIndex] = useState(null);
   const [powers, setPowers] = useState(null);
 
-  const locationsRef = useRef(locations);
+  const locationsRef = useRef([]);
+
+  useEffect(() => {
+    locationsRef.current = locations;
+  }, [locations]);
 
   useEffect(() => {
     if (current === null) return;
@@ -258,7 +262,7 @@ export default function Home() {
                       {powers?.map(({ power, value, checked }) => (
                         <div key={`p${value}`}>
                           <label>
-                            <input className="mr-2 md:my-0 my-2" type="checkbox" name={power} value={value} checked={checked} onClick={() => handlePowerClick(value)} />
+                            <input className="mr-2 md:my-0 my-2" type="checkbox" name={power} value={value} checked={checked} onChange={() => handlePowerClick(value)} />
                             {power}
                           </label>
                         </div>
