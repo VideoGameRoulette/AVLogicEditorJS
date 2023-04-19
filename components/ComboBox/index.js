@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Transition } from '@headlessui/react';
 import { MagnifyingGlassIcon, ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
-import { classNames } from '@/utils';
 
 export const ItemComboBox = ({ options, callback, imageCB, stringCB }) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -13,14 +12,14 @@ export const ItemComboBox = ({ options, callback, imageCB, stringCB }) => {
     }
 
     const filteredOptions = options?.filter((option) =>
-        option.name.toLowerCase().includes(searchText.toLowerCase())
+        option.name.toLowerCase().includes(searchText.toLowerCase()) || stringCB(option.powers).toString().toLowerCase().includes(searchText.toLowerCase())
     )
 
     return (
         <div className="relative">
             <input
                 type="text"
-                placeholder="Search Items..."
+                placeholder="Search Items By Name or Powers..."
                 className="w-full py-2 pl-10 pr-3 text-gray-700 bg-gray-200 rounded-md dark:bg-gray-800 dark:text-white focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700"
                 value={searchText}
                 onChange={handleInputChange}
@@ -83,14 +82,14 @@ export const LocationComboBox = ({ options, callback, imageCB }) => {
     }
 
     const filteredOptions = options?.filter((option) =>
-        option.name.toLowerCase().includes(searchText.toLowerCase())
+        option.name.toLowerCase().includes(searchText.toLowerCase()) || option.id.toString().includes(searchText)
     )
 
     return (
         <div className="relative">
             <input
                 type="text"
-                placeholder="Search Item Locations..."
+                placeholder="Search Locations By Item Name or ID..."
                 className="w-full py-2 pl-10 pr-3 text-gray-700 bg-gray-200 rounded-md dark:bg-gray-800 dark:text-white focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700"
                 value={searchText}
                 onChange={handleInputChange}
