@@ -167,6 +167,15 @@ export default function Home() {
     return room.item ? room.item : "";
   }
 
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch('/logic/items_custom.json');
+      const jsonData = await res.json();
+      setItems(jsonData);
+    }
+    fetchData();
+  }, []);
+
   return (
     <>
       <Head>

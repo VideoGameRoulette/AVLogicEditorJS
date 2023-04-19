@@ -20,5 +20,5 @@ with open('locations_custom.json', 'r') as f:
 for item in data:
     item['requiredPowers'] = sort_flags_by_count_and_value(item['requiredPowers'])
 
-with open('output.json', 'w') as f:
+with open('locations_custom.json', 'w') as f:
     json.dump(data, f, indent=2)

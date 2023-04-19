@@ -188,6 +188,15 @@ export default function Home() {
 
   };
 
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch('/logic/locations_custom.json');
+      const jsonData = await res.json();
+      setLocations(jsonData);
+    }
+    fetchData();
+  }, []);
+
   return (
     <>
       <Head>
