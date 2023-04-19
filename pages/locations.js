@@ -8,6 +8,44 @@ import HeaderButton from 'components/HeaderButton';
 import Powers from 'components/Powers';
 import { LocationComboBox } from 'components/ComboBox';
 
+const links = [
+  {
+    name: 'Items',
+    href: '/items',
+    active: false
+  },
+  {
+    name: 'Locations',
+    href: '/locations',
+    active: true
+  },
+  {
+    name: 'Debugger',
+    href: '/map/debugger',
+    active: false
+  },
+  {
+    name: 'Tracker',
+    href: '/map/tracker',
+    active: false
+  },
+  {
+    name: 'Spoilers',
+    href: '/map/spoilers',
+    active: false
+  },
+  {
+    name: 'Item Tracker',
+    href: '/widgets/items',
+    active: false
+  },
+  {
+    name: 'Stats Tracker',
+    href: '/widgets/stats',
+    active: false
+  },
+];
+
 export default function Home() {
   const [locations, setLocations] = useState(null);
   const [current, setCurrent] = useState(null);
@@ -140,11 +178,15 @@ export default function Home() {
     setCurrent(prev => ({ ...prev, requiredPowers: newData }));
   };
 
-  const handlePowerRemove = (powers) => {
-    const { requiredPowers } = current;
-    const filtered = requiredPowers.filter(e => e !== powers);
-    console.log("Filter: ", filtered);
-    setCurrent(prev => ({ ...prev, requiredPowers: filtered }));
+  const handlePowerRemove = (index) => {
+    setCurrent(prev => {
+      const newRequiredPowers = [...prev.requiredPowers];
+      newRequiredPowers.splice(index, 1);
+      setPIndex(0);
+      setPowers(createPowerObjects(newRequiredPowers[0]));
+      return { ...prev, requiredPowers: newRequiredPowers };
+    });
+
   };
 
   return (
@@ -157,19 +199,10 @@ export default function Home() {
       </Head>
       <div className="absolute w-full h-full bg-gray-100 overflow-hidden">
         <MainContainer>
-          <Header title="Axiom Verge Location Logic Editor" version="0.0.1">
-            <div className="w-1/8 h-full flex gap-2 justify-center items-center">
-              <HeaderButton title="Items" url="/items" active={false} />
-              <HeaderButton title="Locations" url="/locations" active={true} />
-              <HeaderButton title="Tracker" url="/map/tracker" active={false} />
-              <HeaderButton title="Spoilers" url="/map/spoilers" active={false} />
-              <HeaderButton title="Debugger" url="/map/debugger" active={false} />
-              <HeaderButton title="Item Tracker" url="/widgets/items" active={false} />
-            </div>
-          </Header>
+          <Header links={links} />
           <SecondaryContainer>
             {/* Left Container */}
-            <nav className="hidden xl:block bg-gray-900 text-white w-full h-full overflow-hidden flex flex-col p-2">
+            <nav className="hidden md:flex bg-gray-900 text-white w-full h-full overflow-hidden flex-col p-2">
               {/* Load and Save Buttons */}
               <div className="w-full flex gap-2 mb-2 bg-gray-900">
                 <label htmlFor="fileInput" className="w-full p-2 bg-gray-800 hover:bg-gray-700 text-center cursor-pointer">
@@ -204,7 +237,7 @@ export default function Home() {
                   </button>
                   <button
                     className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-r flex items-center"
-                    onClick={() => handlePowerRemove(current?.requiredPowers[pIndex])}
+                    onClick={() => handlePowerRemove(pIndex)}
                   >
                     <MinusIcon className="h-5 w-5 mr-2" />
                     Remove
@@ -213,24 +246,24 @@ export default function Home() {
               </div>
               {/* Power Sets Lists fir Location and flag checkboxes*/}
               {current && (
-                <div className="w-full p-4 grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 bg-gray-800">
-                  <div className="xl:col-span-3 lg:col-span-2 col-span-1 bg-gray-900 py-2 pl-2 pr-1">
+                <div className="w-full p-4 grid md:grid-cols-[1fr_16rem] bg-gray-800">
+                  <div className="col-span-1 bg-gray-900 pt-2 pb-1 md:py-2 px-2 md:pl-2 md:pr-1">
                     {/* Power Set Lists */}
                     <ul role="list" className='w-full h-full bg-gray-700'>
                       {current?.requiredPowers.map((powers, idx) => (
-                        <li key={`test${powers}`} className={classNames(idx === pIndex ? "bg-sky-500 text-black" : "odd:bg-gray-800 even:bg-gray-700 hover:bg-gray-600 text-gray-200", "flex p-4 cursor-pointer")} onClick={() => handleClickPowers(powers, idx)}>
+                        <li key={`power${idx}`} className={classNames(idx === pIndex ? "bg-sky-500 text-black" : "odd:bg-gray-800 even:bg-gray-700 hover:bg-gray-600 text-gray-200", "flex p-4 cursor-pointer")} onClick={() => handleClickPowers(powers, idx)}>
                           <p className="text-sm font-medium">{getFlagStrings(powers)}</p>
                         </li>
                       ))}
                     </ul>
                   </div>
                   {/* Checkboxes */}
-                  <div className="col-span-1 bg-gray-900 py-2 pr-2 pl-1">
+                  <div className="col-span-1 bg-gray-900 pt-1 pb-2 md:py-2 px-2 md:pr-2 md:pl-1">
                     <div className='w-full h-full bg-gray-700 p-4 text-gray-200'>
                       {powers?.map(({ power, value, checked }) => (
                         <div key={`p${value}`}>
                           <label>
-                            <input className="mr-2" type="checkbox" name={power} value={value} checked={checked} onClick={() => handlePowerClick(value)} />
+                            <input className="mr-2 md:my-0 my-2" type="checkbox" name={power} value={value} checked={checked} onClick={() => handlePowerClick(value)} />
                             {power}
                           </label>
                         </div>
@@ -239,7 +272,6 @@ export default function Home() {
                   </div>
                 </div>
               )}
-
             </main>
           </SecondaryContainer>
         </MainContainer>

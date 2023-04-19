@@ -7,6 +7,44 @@ import HeaderButton from 'components/HeaderButton';
 import Powers from 'components/Powers';
 import { ItemComboBox } from 'components/ComboBox';
 
+const links = [
+  {
+    name: 'Items',
+    href: '/items',
+    active: true
+  },
+  {
+    name: 'Locations',
+    href: '/locations',
+    active: false
+  },
+  {
+    name: 'Debugger',
+    href: '/map/debugger',
+    active: false
+  },
+  {
+    name: 'Tracker',
+    href: '/map/tracker',
+    active: false
+  },
+  {
+    name: 'Spoilers',
+    href: '/map/spoilers',
+    active: false
+  },
+  {
+    name: 'Item Tracker',
+    href: '/widgets/items',
+    active: false
+  },
+  {
+    name: 'Stats Tracker',
+    href: '/widgets/stats',
+    active: false
+  },
+];
+
 export default function Home() {
   const [items, setItems] = useState(null);
   const [current, setCurrent] = useState(null);
@@ -140,19 +178,10 @@ export default function Home() {
       </Head>
       <div className="absolute w-full h-full bg-gray-100 overflow-hidden">
         <MainContainer>
-          <Header title="Axiom Verge Item Logic Editor" version="0.0.1">
-            <div className="w-1/8 h-full flex gap-2 justify-center items-center">
-              <HeaderButton title="Items" url="/items" active={true} />
-              <HeaderButton title="Locations" url="/locations" active={false} />
-              <HeaderButton title="Tracker" url="/map/tracker" active={false} />
-              <HeaderButton title="Spoilers" url="/map/spoilers" active={false} />
-              <HeaderButton title="Debugger" url="/map/debugger" active={false} />
-              <HeaderButton title="Item Tracker" url="/widgets/items" active={false} />
-            </div>
-          </Header>
+          <Header links={links} />
           <SecondaryContainer>
             {/* Left Container */}
-            <nav className="hidden xl:flex bg-gray-900 text-white w-full h-full overflow-hidden flex-col p-2">
+            <div className="hidden md:flex bg-gray-900 text-white w-full h-full overflow-hidden flex-col p-2">
               {/* Load and Save Buttons */}
               <div className="w-full flex gap-2 mb-2 bg-gray-900">
                 <label htmlFor="fileInput" className="w-full p-2 bg-gray-800 hover:bg-gray-700 text-center cursor-pointer">
@@ -171,7 +200,7 @@ export default function Home() {
               </div>
               {/* Location List */}
               <ItemComboBox options={items} callback={handleItemClick} imageCB={getItemNameForImage} stringCB={getFlagStrings} />
-            </nav>
+            </div>
             {/* Right Container */}
             <main className="bg-gray-800 w-full h-full overflow-y-auto grid-rows-[4rem_1fr]">
               {/* Header Title and Add / Remove Buttons */}
@@ -180,8 +209,8 @@ export default function Home() {
               </div>
               {/* Power Sets Lists fir Location and flag checkboxes*/}
               {current && (
-                <div className="w-full p-4 grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 bg-gray-800">
-                  <div className="xl:col-span-3 lg:col-span-2 col-span-1 bg-gray-900 py-2 pl-2 pr-1">
+                <div className="w-full p-4 grid grid-cols-1 bg-gray-800">
+                  <div className="col-span-1 bg-gray-900 pt-2 pb-1 px-2">
                     {/* Power Set Lists */}
                     <ul role="list" className='w-full h-full bg-gray-700'>
                       {current && (
@@ -192,7 +221,7 @@ export default function Home() {
                     </ul>
                   </div>
                   {/* Checkboxes */}
-                  <div className="col-span-1 bg-gray-900 py-2 pr-2 pl-1">
+                  <div className="col-span-1 bg-gray-900 pt-1 pb-2 px-2">
                     <div className='w-full h-full bg-gray-700 p-4 text-gray-200'>
                       {powers?.map(({ power, value, checked }) => (
                         <div key={`p${value}`}>

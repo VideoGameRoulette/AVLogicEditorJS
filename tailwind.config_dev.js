@@ -25,6 +25,8 @@ module.exports = {
         'span-12': 'span 12 / span 12',
       },
       backgroundImage: {
+        "main": "url('/imgs/background.png')",
+        "title": "url('/imgs/TitleScreen.png')",
         "datadisruptor": "url('/imgs/DataDisruptor.svg')",
         "nova": "url('/imgs/Nova.svg')",
         "sizenode": "url('/imgs/SizeNode.svg')",

@@ -3,18 +3,31 @@ import Head from 'next/head';
 import path from 'path';
 import { useState, useEffect } from 'react';
 import Powers from 'components/Powers';
+import { ErrorPage } from "components/Errors";
 
 const isDev = process.env.NODE_ENV !== 'production';
 
 const websocket_endpoint = 'ws://localhost:19906';
 
 export default function Tracker() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [locationData, setLocationData] = useState([]);
   const [cPowers, setCPowers] = useState(Powers.None);
   const [openLocations, setLocationOpen] = useState([]);
   const [gameData, setGameData] = useState(null);
   const [currentDiff, setDiff] = useState(null);
+  const [connected, setConnected] = useState(false);
+
+  const handleConnect = () => {
+    const socket = new WebSocket(websocket_endpoint);
+    socket.onopen = () => {
+      setConnected(true);
+    };
+    socket.onclose = () => {
+      setConnected(false);
+    };
+    socket.onmessage = event => appendData(JSON.parse(event.data));
+  }
 
   const getOpenLocations = () => {
     const availableLocations = [];
@@ -94,9 +107,7 @@ export default function Tracker() {
   }, [currentDiff]);
 
   useEffect(() => {
-    const socket = new WebSocket(websocket_endpoint);
-    socket.onopen = () => socket.send(`listen:videogameroulette`);
-    socket.onmessage = event => appendData(JSON.parse(event.data));
+    handleConnect();
   }, []);
 
   const appendData = data => {
@@ -107,6 +118,8 @@ export default function Tracker() {
     setDiff(Progression);
     setCPowers(CurrentPowers);
   };
+
+  if (gameData === null) return <ErrorPage connected={connected} callback={handleConnect} />;
 
   return (
     <>

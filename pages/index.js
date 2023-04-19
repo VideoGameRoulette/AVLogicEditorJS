@@ -1,7 +1,45 @@
 import Head from 'next/head';
 import Header from 'components/Header';
 import { MainContainer } from 'components/Containers';
-import HeaderButton from 'components/HeaderButton';
+import { useState } from 'react';
+
+const links = [
+  {
+    name: 'Items',
+    href: '/items',
+    active: false
+  },
+  {
+    name: 'Locations',
+    href: '/locations',
+    active: false
+  },
+  {
+    name: 'Debugger',
+    href: '/map/debugger',
+    active: false
+  },
+  {
+    name: 'Tracker',
+    href: '/map/tracker',
+    active: false
+  },
+  {
+    name: 'Spoilers',
+    href: '/map/spoilers',
+    active: false
+  },
+  {
+    name: 'Item Tracker',
+    href: '/widgets/items',
+    active: false
+  },
+  {
+    name: 'Stats Tracker',
+    href: '/widgets/stats',
+    active: false
+  },
+];
 
 export default function Home() {
   return (
@@ -14,20 +52,14 @@ export default function Home() {
       </Head>
       <div className="absolute w-full h-full bg-gray-100 overflow-hidden">
         <MainContainer>
-          <Header title="Axiom Verge Randomizer Tools" version="0.0.1">
-            <div className="w-1/8 h-full flex gap-2 justify-center items-center">
-              <HeaderButton title="Items" url="/items" active={false} />
-              <HeaderButton title="Locations" url="/locations" active={false} />
-              <HeaderButton title="Tracker" url="/map/tracker" active={false} />
-              <HeaderButton title="Spoilers" url="/map/spoilers" active={false} />
-              <HeaderButton title="Debugger" url="/map/debugger" active={false} />
-              <HeaderButton title="Item Tracker" url="/widgets/items" active={false} />
+          <Header links={links} />
+          <div className="w-full h-full flex flex-col justify-center items-center text-gray-200">
+            <div className="w-full h-full bg-main brightness-50 bg-cover bg-center" />
+            <div className="absolute w-full h-full flex flex-col justify-center items-center p-8 py-16 gap-2">
+              <div className="w-full h-40 bg-title bg-contain bg-center bg-no-repeat" />
+              <h1 className="text-white text-xl font-bold">Welcome to AVR Web Tool Kit</h1>
+              <h1 className="text-white text-lg">Created By: VideoGameRoulette</h1>
             </div>
-          </Header>
-          <div className="bg-gray-900 w-full h-full flex flex-col justify-center items-center text-gray-200 font-bold">
-            <img className="w-1/2" src="imgs/TitleScreen.png" />
-            <h1>Welcome to the AVR Web Tool Kit</h1>
-            <p>Developed By VideoGameRoulette</p>
           </div>
         </MainContainer>
       </div>

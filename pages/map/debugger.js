@@ -10,6 +10,44 @@ import Powers from 'components/Powers';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
+const links = [
+  {
+    name: 'Items',
+    href: '/items',
+    active: false
+  },
+  {
+    name: 'Locations',
+    href: '/locations',
+    active: false
+  },
+  {
+    name: 'Debugger',
+    href: '/map/debugger',
+    active: true
+  },
+  {
+    name: 'Tracker',
+    href: '/map/tracker',
+    active: false
+  },
+  {
+    name: 'Spoilers',
+    href: '/map/spoilers',
+    active: false
+  },
+  {
+    name: 'Item Tracker',
+    href: '/widgets/items',
+    active: false
+  },
+  {
+    name: 'Stats Tracker',
+    href: '/widgets/stats',
+    active: false
+  },
+];
+
 export default function Debugger() {
   const [data, setData] = useState([]);
   const [locationData, setLocationData] = useState([]);
@@ -119,19 +157,10 @@ export default function Debugger() {
       </Head>
       <div className="absolute w-full h-full bg-gray-100 overflow-hidden">
         <MainContainer>
-          <Header title="Axiom Verge Logic Tester" version="0.0.1">
-            <div className="w-1/8 h-full flex gap-2 justify-center items-center">
-              <HeaderButton title="Items" url="/items" active={false} />
-              <HeaderButton title="Locations" url="/locations" active={false} />
-              <HeaderButton title="Tracker" url="/map/tracker" active={false} />
-              <HeaderButton title="Spoilers" url="/map/spoilers" active={false} />
-              <HeaderButton title="Debugger" url="/map/debugger" active={true} />
-              <HeaderButton title="Item Tracker" url="/widgets/items" active={false} />
-            </div>
-          </Header>
+          <Header links={links} />
           <SecondaryContainer>
             {/* Left Container */}
-            <nav className="hidden xl:block bg-gray-900 text-white w-full h-full overflow-hidden flex flex-col p-2">
+            <nav className="hidden md:flex bg-gray-900 text-white w-full h-full overflow-hidden flex-col p-2">
               <DropdownMenu selectedPower={selectedPower} setSelectedPower={setSelectedPower} />
               <div className="w-full flex p-2 gap-2 justify-center items-center">
                 <button className="w-full bg-gray-800 py-2 hover:bg-gray-700" onClick={() => AddPower(selectedPower)}>Add Power</button>

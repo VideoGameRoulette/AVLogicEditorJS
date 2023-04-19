@@ -2,15 +2,28 @@ import SpoilerMap from 'components/SpoilerMap.js';
 import Head from 'next/head';
 import path from 'path';
 import { useState, useEffect } from 'react';
+import { ErrorPage } from "components/Errors";
 
 const isDev = process.env.NODE_ENV !== 'production';
 
 const websocket_endpoint = 'ws://localhost:19906';
 
 export default function Spoilers() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [items, setItems] = useState(null);
   const [randomItems, setRandomItems] = useState(null);
+  const [connected, setConnected] = useState(false);
+
+  const handleConnect = () => {
+    const socket = new WebSocket(websocket_endpoint);
+    socket.onopen = () => {
+      setConnected(true);
+    };
+    socket.onclose = () => {
+      setConnected(false);
+    };
+    socket.onmessage = event => appendData(JSON.parse(event.data));
+  }
 
   const handlePresetFile = file => {
     const reader = new FileReader();
@@ -44,9 +57,7 @@ export default function Spoilers() {
   }, []);
 
   useEffect(() => {
-    const socket = new WebSocket(websocket_endpoint);
-    socket.onopen = () => socket.send(`listen:videogameroulette`);
-    socket.onmessage = event => appendData(JSON.parse(event.data));
+    handleConnect();
   }, []);
 
   const appendData = data => {
@@ -55,6 +66,8 @@ export default function Spoilers() {
     setItems(Items);
     setRandomItems(RandomItems);
   };
+
+  if (items === null) return <ErrorPage connected={connected} callback={handleConnect} />;
 
   return (
     <>

@@ -8,7 +8,7 @@ export const MainContainer = ({ children }) => {
 
 export const SecondaryContainer = ({ children }) => {
     return (
-        <div className="xl:grid xl:grid-cols-[20%_80%] w-full h-full overflow-hidden">
+        <div className="md:grid md:grid-cols-[24rem_1fr] w-full h-full overflow-hidden">
             {children}
         </div>
     )

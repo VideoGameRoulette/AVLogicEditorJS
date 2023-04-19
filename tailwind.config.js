@@ -25,6 +25,8 @@ module.exports = {
         'span-12': 'span 12 / span 12',
       },
       backgroundImage: {
+        "main": "url('/AVLogicEditorJS/imgs/background.png')",
+        "title": "url('/AVLogicEditorJS/imgs/TitleScreen.png')",
         "datadisruptor": "url('/AVLogicEditorJS/imgs/DataDisruptor.svg')",
         "nova": "url('/AVLogicEditorJS/imgs/Nova.svg')",
         "sizenode": "url('/AVLogicEditorJS/imgs/SizeNode.svg')",
