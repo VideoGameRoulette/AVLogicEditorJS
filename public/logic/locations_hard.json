@@ -1,5 +1,6 @@
 [
   {
+    "area": "Eribu",
     "name": "DataDisruptor",
     "requiredPowers": [
       0
@@ -7,61 +8,67 @@
     "id": 1
   },
   {
+    "area": "Eribu",
     "name": "Nova",
     "requiredPowers": [
-      1,
-      4,
-      512
+      1
     ],
     "id": 2
   },
   {
+    "area": "Eribu",
     "name": "SizeNode1",
     "requiredPowers": [
       2,
-      128,
       512,
-      1024,
-      32768
+      32768,
+      33,
+      1025
     ],
     "id": 3
   },
   {
+    "area": "Eribu",
     "name": "Drill",
     "requiredPowers": [
-      2,
-      129,
       512,
-      513,
-      1028,
       32768,
-      32800
+      3,
+      33,
+      1025,
+      1152,
+      1060,
+      8384,
+      528576
     ],
     "id": 4
   },
   {
+    "area": "Eribu",
     "name": "PowerNode1",
     "requiredPowers": [
+      32768,
       6,
-      128,
       516,
       1028,
-      32768
+      37
     ],
     "id": 5
   },
   {
+    "area": "Eribu",
     "name": "MultiDisruptor",
     "requiredPowers": [
+      32768,
       6,
-      128,
       516,
       1028,
-      32768
+      37
     ],
     "id": 6
   },
   {
+    "area": "Eribu",
     "name": "HealthNode1",
     "requiredPowers": [
       4,
@@ -71,17 +78,17 @@
     "id": 7
   },
   {
+    "area": "Absu",
     "name": "HealthNodeFragment1",
     "requiredPowers": [
-      20,
-      128,
+      4,
       512,
-      1028,
       32768
     ],
     "id": 8
   },
   {
+    "area": "Absu",
     "name": "Kilver",
     "requiredPowers": [
       4,
@@ -91,310 +98,359 @@
     "id": 9
   },
   {
+    "area": "Absu",
     "name": "HealthNodeFragment4",
     "requiredPowers": [
+      32768,
       12,
       68,
       516,
-      1028,
-      2560,
-      32768
+      2560
     ],
     "id": 10
   },
   {
+    "area": "Absu",
     "name": "AddressDisruptor1",
     "requiredPowers": [
-      12,
-      68,
       512,
-      1028,
-      4224,
-      32768
+      32768,
+      12,
+      68
     ],
     "id": 11
   },
   {
+    "area": "Eribu",
     "name": "HealthNodeFragment2",
     "requiredPowers": [
-      20,
       128,
       512,
-      1028,
-      32768
+      32768,
+      20,
+      1028
     ],
     "id": 12
   },
   {
+    "area": "Absu",
     "name": "PowerNodeFragment7",
     "requiredPowers": [
-      28,
-      84,
+      32768,
       528,
-      1044,
-      32768
+      28,
+      84
     ],
     "id": 13
   },
   {
+    "area": "Absu",
     "name": "HealthNode2",
     "requiredPowers": [
-      28,
-      84,
       512,
+      32768,
       1028,
       4224,
-      32768
+      131076,
+      28,
+      84,
+      8328,
+      8384
     ],
     "id": 14
   },
   {
+    "area": "Absu",
     "name": "SizeNode2",
     "requiredPowers": [
-      28,
-      84,
+      32768,
       516,
       528,
       1028,
       4224,
-      32768
+      131076,
+      28,
+      84,
+      8328,
+      8384
     ],
     "id": 15
   },
   {
+    "area": "Absu",
     "name": "Note15",
     "requiredPowers": [
-      28,
-      84,
+      32768,
+      136,
+      192,
       516,
       1028,
-      1536,
       4224,
-      32768
+      28,
+      44,
+      84,
+      100
     ],
     "id": 16
   },
   {
+    "area": "Absu",
     "name": "Note24",
     "requiredPowers": [
-      28,
-      84,
+      32768,
       516,
       1028,
       4224,
-      32768
+      131076,
+      28,
+      84,
+      8328,
+      8384
     ],
     "id": 17
   },
   {
+    "area": "Absu",
     "name": "HealthNodeFragment3",
     "requiredPowers": [
-      28,
-      84,
+      32768,
       516,
       1028,
-      4240,
-      4288,
-      32768,
-      135296
+      131076,
+      28,
+      84,
+      4288
     ],
     "id": 18
   },
   {
+    "area": "Absu",
     "name": "PowerNode2",
     "requiredPowers": [
-      28,
-      84,
+      32768,
       516,
       1028,
       4224,
-      32768
+      131076,
+      28,
+      84,
+      8328,
+      8384
     ],
     "id": 19
   },
   {
+    "area": "Kur",
     "name": "HighJump",
     "requiredPowers": [
+      512,
+      32768,
+      1028,
+      4224,
+      131076,
       28,
       84,
-      512,
-      516,
-      1028,
-      1044,
-      4224,
-      32768
+      8328,
+      8384
     ],
     "id": 20
   },
   {
+    "area": "Kur",
     "name": "FireWall",
     "requiredPowers": [
-      60,
-      116,
-      152,
-      208,
       512,
-      516,
+      32768,
       1028,
       4224,
-      32768
+      131200,
+      152,
+      208,
+      8328,
+      12352,
+      131108,
+      60,
+      116
     ],
     "id": 21
   },
   {
+    "area": "Zi",
     "name": "Note10",
     "requiredPowers": [
-      60,
-      116,
+      32768,
       516,
       1028,
       4224,
-      32768
+      131108,
+      60,
+      116
     ],
     "id": 22
   },
   {
+    "area": "Zi",
     "name": "HealthNodeFragment14",
     "requiredPowers": [
-      60,
-      116,
+      32768,
       516,
-      548,
       1028,
       4224,
-      32768
+      131108,
+      60,
+      116
     ],
     "id": 23
   },
   {
+    "area": "Zi",
     "name": "GlitchTeleport",
     "requiredPowers": [
-      60,
-      84,
-      116,
-      532,
-      564,
+      32768,
+      528,
+      544,
       1028,
-      4225,
-      32768
+      60,
+      116,
+      4241
     ],
     "id": 24
   },
   {
+    "area": "Absu",
     "name": "Note14",
     "requiredPowers": [
-      68,
       512,
-      1028,
-      32768
+      32768,
+      68
     ],
     "id": 25
   },
   {
+    "area": "Absu",
     "name": "Note7",
     "requiredPowers": [
-      68,
       512,
-      1028,
-      32768
+      32768,
+      68
     ],
     "id": 26
   },
   {
+    "area": "Absu",
     "name": "RangeNode1",
     "requiredPowers": [
-      124,
-      152,
       512,
-      640,
+      32768,
       1028,
       4224,
-      32768
+      131200,
+      152,
+      8328,
+      8384,
+      116
     ],
     "id": 27
   },
   {
+    "area": "Zi",
     "name": "RangeNode2",
     "requiredPowers": [
-      124,
+      32768,
       576,
       1028,
       4288,
-      32768
+      116,
+      131172
     ],
     "id": 28
   },
   {
+    "area": "Zi",
     "name": "TendrilsTop",
     "requiredPowers": [
-      60,
+      32768,
       544,
       1028,
       1536,
       4224,
-      32768
+      131108,
+      60,
+      116
     ],
     "id": 29
   },
   {
+    "area": "Zi",
     "name": "HealthNodeFragment7",
     "requiredPowers": [
-      124,
       512,
+      32768,
       1028,
       4288,
-      32768
+      116,
+      131172
     ],
     "id": 30
   },
   {
+    "area": "Zi",
     "name": "SizeNode3",
     "requiredPowers": [
-      60,
       512,
-      540,
+      32768,
       1028,
       4224,
-      32768
+      131108,
+      60,
+      116
     ],
     "id": 31
   },
   {
+    "area": "Zi",
     "name": "HealthNode3",
     "requiredPowers": [
-      116,
+      32768,
       528,
-      564,
+      544,
       1044,
       1060,
-      4225,
-      32768
+      116,
+      4305
     ],
     "id": 32
   },
   {
+    "area": "Kur",
     "name": "PowerNode3",
     "requiredPowers": [
-      116,
       512,
+      32768,
       1028,
       4288,
-      32768
+      116,
+      131172
     ],
     "id": 33
   },
   {
+    "area": "Kur",
     "name": "DroneGun",
     "requiredPowers": [
-      116,
-      548,
+      32768,
+      544,
       1028,
+      1536,
       4288,
-      32768
+      4736,
+      116,
+      131172
     ],
     "id": 34
   },
   {
+    "area": "Absu",
     "name": "Note16",
     "requiredPowers": [
       128
@@ -402,232 +458,270 @@
     "id": 35
   },
   {
+    "area": "Absu",
     "name": "PowerNodeFragment3",
     "requiredPowers": [
       128,
+      32768,
       516,
       1028,
       1536,
-      2560,
-      32768
+      2560
     ],
     "id": 36
   },
   {
+    "area": "Absu",
     "name": "Note28",
     "requiredPowers": [
-      152,
-      208,
+      32768,
       640,
       4224,
-      32768
+      131200,
+      152,
+      208,
+      8328,
+      8384
     ],
     "id": 37
   },
   {
+    "area": "Absu",
     "name": "HealthNodeFragment6",
     "requiredPowers": [
       512,
-      604,
+      32768,
       1028,
-      4224,
-      32768
+      4224
     ],
     "id": 38
   },
   {
+    "area": "Zi",
     "name": "HealthNodeFragment5",
     "requiredPowers": [
-      152,
-      208,
       512,
-      640,
+      32768,
       1028,
       4224,
-      32768
+      131200,
+      152,
+      208,
+      8328,
+      8384
     ],
     "id": 39
   },
   {
+    "area": "Zi",
     "name": "PasswordTool",
     "requiredPowers": [
-      152,
-      208,
-      640,
+      512,
+      32768,
       1028,
       4224,
-      32768
+      131200,
+      152,
+      208
     ],
     "id": 40
   },
   {
+    "area": "Zi",
     "name": "Note19",
     "requiredPowers": [
-      152,
-      208,
-      640,
+      512,
+      32768,
       1028,
       4224,
-      32768
+      131200,
+      152,
+      208
     ],
     "id": 41
   },
   {
+    "area": "Zi",
     "name": "Note20",
     "requiredPowers": [
-      152,
-      208,
       640,
       1152,
       4224,
-      32896
+      32896,
+      131232,
+      184,
+      240
     ],
     "id": 42
   },
   {
+    "area": "Zi",
     "name": "Voranj",
     "requiredPowers": [
-      152,
-      208,
       640,
       1152,
       4224,
-      32896
+      32896,
+      131232,
+      184,
+      240
     ],
     "id": 43
   },
   {
+    "area": "Kur",
     "name": "HealthNodeFragment10",
     "requiredPowers": [
-      152,
-      208,
       640,
       1152,
       4224,
-      32896
+      32896,
+      131200,
+      152,
+      208,
+      8328,
+      8384
     ],
     "id": 44
   },
   {
+    "area": "Kur",
     "name": "VerticalSpread",
     "requiredPowers": [
-      240,
-      672,
+      32768,
       1152,
+      672,
       4288,
-      32768
+      240,
+      4736,
+      131296
     ],
     "id": 45
   },
   {
+    "area": "Kur",
     "name": "HealthNodeFragment8",
     "requiredPowers": [
-      240,
-      544,
-      1152,
-      4288,
       32768,
-      32896
+      544,
+      1028,
+      4288,
+      240,
+      1536,
+      131296,
+      4736
     ],
     "id": 46
   },
   {
+    "area": "Kur",
     "name": "AddressDisruptor2",
     "requiredPowers": [
+      32768,
+      512,
+      1028,
       208,
       268,
-      640,
-      772,
-      1152,
       4288,
-      32768
+      324,
+      131264,
+      262212
     ],
     "id": 47
   },
   {
+    "area": "Absu",
     "name": "PowerNodeFragment5",
     "requiredPowers": [
       384,
-      772,
-      1280,
-      1316,
-      33024
+      1284,
+      33024,
+      768
     ],
     "id": 48
   },
   {
+    "area": "Absu",
     "name": "PowerNodeFragment6",
     "requiredPowers": [
-      416,
-      1316,
+      33024,
       1408,
-      1792,
-      1796,
+      896,
+      1316,
+      4480,
       8576,
-      33024
+      416,
+      1792
     ],
     "id": 49
   },
   {
+    "area": "Absu",
     "name": "InertialPulse",
     "requiredPowers": [
+      32768,
       268,
       324,
       772,
       1284,
       4480,
-      32768
+      1792
     ],
     "id": 50
   },
   {
+    "area": "Zi",
     "name": "PowerNodeFragment8",
     "requiredPowers": [
-      300,
-      356,
       512,
+      32768,
       1028,
       1060,
       1284,
-      32768
+      300,
+      356
     ],
     "id": 51
   },
   {
+    "area": "Kur",
     "name": "HealthNodeFragment9",
     "requiredPowers": [
-      480,
       1152,
+      32896,
       1408,
-      32896
+      480
     ],
     "id": 52
   },
   {
+    "area": "Kur",
     "name": "HealthNode4",
     "requiredPowers": [
-      356,
-      800,
+      32768,
       1028,
       1536,
+      800,
       4480,
       5248,
-      32768
+      356
     ],
     "id": 53
   },
   {
+    "area": "Kur",
     "name": "Grapple",
     "requiredPowers": [
-      480,
+      32768,
       1028,
       4736,
       5248,
-      32768
+      480
     ],
     "id": 54
   },
   {
+    "area": "Indi",
     "name": "Note25",
     "requiredPowers": [
       640,
@@ -638,351 +732,381 @@
     "id": 55
   },
   {
+    "area": "Eribu",
     "name": "HealthNodeFragment13",
     "requiredPowers": [
+      32768,
       896,
-      1284,
-      32768
+      1284
     ],
     "id": 56
   },
   {
+    "area": "Zi",
     "name": "PowerNodeFragment1",
     "requiredPowers": [
       528,
+      33280,
       532,
-      572,
       4228,
       4240,
       9344,
+      41088,
       9376,
-      33280,
-      41088
+      572
     ],
     "id": 57
   },
   {
+    "area": "Kur",
     "name": "TetheredCharge",
     "requiredPowers": [
+      32784,
+      294912,
+      263172,
       720,
       1076,
       1556,
-      5264,
-      32784,
-      263172,
-      294912
+      5264
     ],
     "id": 58
   },
   {
+    "area": "Kur",
     "name": "Note13",
     "requiredPowers": [
       672,
-      736,
-      752,
       1664,
-      4288
+      4288,
+      736,
+      752
     ],
     "id": 59
   },
   {
+    "area": "Kur",
     "name": "HealthNodeFragment12",
     "requiredPowers": [
       672,
-      736,
-      752,
       1664,
-      4288
+      4288,
+      736,
+      752
     ],
     "id": 60
   },
   {
+    "area": "Kur",
     "name": "HealthNodeFragment11",
     "requiredPowers": [
-      868,
+      32768,
       1028,
       4736,
       5248,
-      32768
+      868
     ],
     "id": 61
   },
   {
+    "area": "Kur",
     "name": "PowerNode4",
     "requiredPowers": [
-      868,
-      1060,
+      32768,
       1152,
+      1060,
       1408,
       1540,
-      1796,
       4736,
       5248,
-      32768
+      1796,
+      868
     ],
     "id": 62
   },
   {
+    "area": "Kur",
     "name": "Note17",
     "requiredPowers": [
-      868,
+      32768,
       1796,
       4292,
       4304,
       12480,
-      32768,
-      33540
+      33540,
+      868
     ],
     "id": 63
   },
   {
+    "area": "Kur",
     "name": "PowerNodeFragment14",
     "requiredPowers": [
-      868,
+      32800,
       1796,
       4292,
       4304,
       12480,
-      32800,
-      33540
+      33540,
+      868
     ],
     "id": 64
   },
   {
+    "area": "Kur",
     "name": "Reflect",
     "requiredPowers": [
       672,
-      736,
-      752,
       1664,
       4288,
+      33408,
+      736,
       4292,
       4304,
-      33408
+      752
     ],
     "id": 65
   },
   {
+    "area": "Kur",
     "name": "EnhancedLaunch",
     "requiredPowers": [
-      868,
-      1796,
+      32768,
       4736,
       5248,
+      1796,
       12480,
-      32768,
-      33540
+      33540,
+      868
     ],
     "id": 66
   },
   {
+    "area": "Ukkin-Na",
     "name": "BlackCoat",
     "requiredPowers": [
-      356,
       512,
+      32768,
       1028,
       1060,
-      32768
+      356
     ],
     "id": 67
   },
   {
+    "area": "Absu",
     "name": "RangeNode4",
     "requiredPowers": [
-      448,
       512,
+      448,
       1284,
       1408,
-      1796,
       33056,
       33152,
-      33536
+      33536,
+      1796
     ],
     "id": 68
   },
   {
+    "area": "Absu",
     "name": "PowerNodeFragment9",
     "requiredPowers": [
       512,
+      32768,
       1028,
       1060,
-      1540,
-      32768
+      1540
     ],
     "id": 69
   },
   {
+    "area": "Kur",
     "name": "Note12",
     "requiredPowers": [
       1536,
+      33280,
       1572,
       4800,
       12480,
       13440,
-      33280,
       45184,
       528576
     ],
     "id": 70
   },
   {
+    "area": "Eribu",
     "name": "PowerNodeFragment16",
     "requiredPowers": [
+      32800,
+      33280,
       1664,
       4288,
       5248,
-      32800,
-      33280,
       36992
     ],
     "id": 71
   },
   {
+    "area": "Indi",
     "name": "Note9",
     "requiredPowers": [
+      32768,
       544,
       1028,
-      1536,
-      32768
+      1536
     ],
     "id": 72
   },
   {
+    "area": "Ukkin-Na",
     "name": "Note22",
     "requiredPowers": [
       1152,
+      32896,
       1184,
       1664,
-      5248,
-      32896
+      5248
     ],
     "id": 73
   },
   {
+    "area": "Ukkin-Na",
     "name": "PowerNodeFragment15",
     "requiredPowers": [
       512,
+      32768,
       1028,
       1060,
       1540,
-      5248,
-      32768
+      5248
     ],
     "id": 74
   },
   {
+    "area": "Ukkin-Na",
     "name": "PowerNodeFragment13",
     "requiredPowers": [
-      480,
       512,
-      960,
+      32896,
       1408,
-      1920,
-      32896
+      480,
+      960,
+      1920
     ],
     "id": 75
   },
   {
+    "area": "Ukkin-Na",
     "name": "HealthNodeFragment16",
     "requiredPowers": [
       640,
       1152,
-      1920,
       32896,
-      33280
+      33280,
+      1920
     ],
     "id": 76
   },
   {
+    "area": "Ukkin-Na",
     "name": "HealthNode5",
     "requiredPowers": [
-      356,
       512,
+      32768,
       1284,
+      356,
       1316,
-      1796,
-      32768
+      1796
     ],
     "id": 77
   },
   {
+    "area": "Ukkin-Na",
     "name": "Note8",
     "requiredPowers": [
+      32768,
       544,
-      868,
+      32800,
       1284,
       1316,
       1796,
-      4548,
-      32768,
-      32800
+      868,
+      4548
     ],
     "id": 78
   },
   {
+    "area": "Ukkin-Na",
     "name": "Note23",
     "requiredPowers": [
       512,
+      32768,
       1284,
       1316,
-      1796,
-      32768
+      1796
     ],
     "id": 79
   },
   {
+    "area": "Ukkin-Na",
     "name": "HealthNodeFragment18",
     "requiredPowers": [
-      1284,
-      1316,
-      1796,
-      4544,
-      32768
+      1028,
+      1536,
+      4736,
+      688,
+      484
     ],
     "id": 80
   },
   {
+    "area": "Edin",
     "name": "Note18",
     "requiredPowers": [
+      32768,
       1060,
       1540,
-      5248,
-      32768
+      5248
     ],
     "id": 81
   },
   {
+    "area": "Edin",
     "name": "Note27",
     "requiredPowers": [
+      32768,
       1060,
       1540,
-      5248,
-      32768
+      5248
     ],
     "id": 82
   },
   {
+    "area": "Edin",
     "name": "GlitchBomb",
     "requiredPowers": [
+      32768,
       1060,
       1540,
-      5248,
-      32768
+      5248
     ],
     "id": 83
   },
   {
+    "area": "Eribu",
     "name": "HealthNode9",
     "requiredPowers": [
+      3072,
+      34816,
       2208,
       2592,
-      3072,
-      6272,
-      34816
+      6272
     ],
     "id": 84
   },
   {
+    "area": "Eribu",
     "name": "LightningGun",
     "requiredPowers": [
       640,
@@ -993,104 +1117,113 @@
     "id": 85
   },
   {
+    "area": "Absu",
     "name": "PowerNodeFragment4",
     "requiredPowers": [
       2560,
+      34816,
       2564,
       3076,
-      3108,
       6272,
-      34816
+      3108
     ],
     "id": 86
   },
   {
+    "area": "Edin",
     "name": "PowerNode5",
     "requiredPowers": [
+      34816,
+      33312,
+      34848,
       3108,
       3588,
       5504,
       7296,
       13440,
-      33312,
-      34816,
-      34848,
       39040,
       45184
     ],
     "id": 87
   },
   {
+    "area": "Edin",
     "name": "HealthNode6",
     "requiredPowers": [
+      34816,
+      33312,
+      34848,
       3108,
       3588,
       5504,
       7296,
       13440,
-      33312,
-      34816,
-      34848,
       39040,
       45184
     ],
     "id": 88
   },
   {
+    "area": "Edin",
     "name": "RangeNode3",
     "requiredPowers": [
+      32896,
       1184,
       1540,
-      1664,
-      32896
+      1664
     ],
     "id": 89
   },
   {
+    "area": "Edin",
     "name": "Shards",
     "requiredPowers": [
-      2148,
+      34816,
       3076,
-      6336,
-      34816
+      2148,
+      6336
     ],
     "id": 90
   },
   {
+    "area": "Edin",
     "name": "Note5",
     "requiredPowers": [
+      32768,
       1060,
       1540,
-      2660,
       3076,
-      32768
+      2660
     ],
     "id": 91
   },
   {
+    "area": "Edin",
     "name": "DroneTeleport",
     "requiredPowers": [
+      32896,
       1184,
       1664,
-      3232,
-      32896
+      3232
     ],
     "id": 92
   },
   {
+    "area": "Edin",
     "name": "HealthNodeFragment19",
     "requiredPowers": [
       1536,
-      1572,
       33280,
+      1572,
       529536,
-      537728,
       561280,
+      537728,
       569472
     ],
     "id": 93
   },
   {
+    "area": "Edin",
     "name": "DistortionField",
     "requiredPowers": [
       33280,
@@ -1100,6 +1233,7 @@
     "id": 94
   },
   {
+    "area": "Eribu",
     "name": "Note2",
     "requiredPowers": [
       128,
@@ -1108,6 +1242,7 @@
     "id": 95
   },
   {
+    "area": "Absu",
     "name": "DataGrenade",
     "requiredPowers": [
       5248,
@@ -1116,6 +1251,7 @@
     "id": 96
   },
   {
+    "area": "Ukkin-Na",
     "name": "TriCone",
     "requiredPowers": [
       516,
@@ -1126,55 +1262,60 @@
     "id": 97
   },
   {
+    "area": "Edin",
     "name": "Note4",
     "requiredPowers": [
+      32768,
       1540,
-      6816,
       7296,
-      32768
+      6816
     ],
     "id": 98
   },
   {
+    "area": "Edin",
     "name": "HealthNode7",
     "requiredPowers": [
+      36992,
       5280,
       5760,
-      6816,
       7296,
-      36992,
-      39040
+      39040,
+      6816
     ],
     "id": 99
   },
   {
+    "area": "Edin",
     "name": "PowerNodeFragment17",
     "requiredPowers": [
+      36992,
       5280,
       5760,
-      6816,
       7296,
-      36992,
-      39040
+      39040,
+      6816
     ],
     "id": 100
   },
   {
+    "area": "Edin",
     "name": "TendrilsBottom",
     "requiredPowers": [
-      1568,
-      13440,
       33280,
+      1568,
       33312,
+      13440,
       45184
     ],
     "id": 101
   },
   {
+    "area": "Edin",
     "name": "HealthNodeFragment20",
     "requiredPowers": [
-      13440,
       33312,
+      13440,
       37504,
       45184,
       529024,
@@ -1184,16 +1325,18 @@
     "id": 102
   },
   {
+    "area": "E-Kur-Mah",
     "name": "Note1",
     "requiredPowers": [
-      13440,
       33280,
       33312,
+      13440,
       45184
     ],
     "id": 103
   },
   {
+    "area": "E-Kur-Mah",
     "name": "Note3",
     "requiredPowers": [
       13440,
@@ -1204,6 +1347,7 @@
     "id": 104
   },
   {
+    "area": "E-Kur-Mah",
     "name": "BreachSuppressor",
     "requiredPowers": [
       13440,
@@ -1214,41 +1358,45 @@
     "id": 105
   },
   {
+    "area": "E-Kur-Mah",
     "name": "PowerNode6",
     "requiredPowers": [
-      29824,
       33280,
       45184,
-      545920,
-      561280
+      561280,
+      29824,
+      545920
     ],
     "id": 106
   },
   {
+    "area": "E-Kur-Mah",
     "name": "HealthNodeFragment17",
     "requiredPowers": [
-      29824,
       33280,
       45184,
+      561280,
+      29824,
       530048,
-      545920,
-      561280
+      545920
     ],
     "id": 107
   },
   {
+    "area": "E-Kur-Mah",
     "name": "RedCoat",
     "requiredPowers": [
-      29824,
       32768,
       33280,
       45184,
+      29824,
       530048,
       545920
     ],
     "id": 108
   },
   {
+    "area": "Kur",
     "name": "IonBeam",
     "requiredPowers": [
       32768
@@ -1256,6 +1404,7 @@
     "id": 109
   },
   {
+    "area": "Ukkin-Na",
     "name": "PowerNodeFragment10",
     "requiredPowers": [
       32768,
@@ -1264,6 +1413,7 @@
     "id": 110
   },
   {
+    "area": "E-Kur-Mah",
     "name": "PowerNodeFragment18",
     "requiredPowers": [
       32768,
@@ -1272,6 +1422,7 @@
     "id": 111
   },
   {
+    "area": "Mar-Uru",
     "name": "HealthNode8",
     "requiredPowers": [
       33312,
@@ -1281,6 +1432,7 @@
     "id": 112
   },
   {
+    "area": "Mar-Uru",
     "name": "PowerNodeFragment11",
     "requiredPowers": [
       33312,
@@ -1290,6 +1442,7 @@
     "id": 113
   },
   {
+    "area": "Mar-Uru",
     "name": "Note6",
     "requiredPowers": [
       33312,
@@ -1299,6 +1452,7 @@
     "id": 114
   },
   {
+    "area": "Mar-Uru",
     "name": "PowerNodeFragment12",
     "requiredPowers": [
       33312,
@@ -1308,6 +1462,7 @@
     "id": 115
   },
   {
+    "area": "Mar-Uru",
     "name": "SizeNode4",
     "requiredPowers": [
       33312,
@@ -1317,6 +1472,7 @@
     "id": 116
   },
   {
+    "area": "Mar-Uru",
     "name": "Note26",
     "requiredPowers": [
       33312,
@@ -1326,6 +1482,7 @@
     "id": 117
   },
   {
+    "area": "Mar-Uru",
     "name": "Scythe",
     "requiredPowers": [
       33312,
@@ -1335,6 +1492,7 @@
     "id": 118
   },
   {
+    "area": "Mar-Uru",
     "name": "Note21",
     "requiredPowers": [
       33440,
@@ -1344,6 +1502,7 @@
     "id": 119
   },
   {
+    "area": "E-Kur-Mah",
     "name": "Note11",
     "requiredPowers": [
       33280,
@@ -1353,6 +1512,7 @@
     "id": 120
   },
   {
+    "area": "Eribu",
     "name": "WallTrace",
     "requiredPowers": [
       69760,
@@ -1362,6 +1522,7 @@
     "id": 121
   },
   {
+    "area": "Eribu",
     "name": "PowerNodeFragment2",
     "requiredPowers": [
       128,
@@ -1372,28 +1533,31 @@
     "id": 122
   },
   {
+    "area": "Eribu",
     "name": "FlameThrower",
     "requiredPowers": [
-      71552,
       98816,
       98848,
-      102528
+      102528,
+      71552
     ],
     "id": 123
   },
   {
+    "area": "E-Kur-Mah",
     "name": "Swim",
     "requiredPowers": [
-      70816,
-      78976,
       98816,
       98848,
       102528,
+      70816,
+      78976,
       110720
     ],
     "id": 124
   },
   {
+    "area": "Indi",
     "name": "HealthNodeFragment15",
     "requiredPowers": [
       772,
